@@ -1,0 +1,23 @@
+:root {
+  // Color
+  --white: #fefdff;
+  --blue: #4343a7;
+  --blue-light: #e9f0fa;
+  --red: #d22f32;
+  --orange: #fdc942;
+  --gray: #3f3f40;
+  --light-gray: #faf9fe;
+  --pink: #f1b0b1;
+  --green: #83ac0e;
+  --dark: #263238;
+
+  --gradient: linear-gradient(
+    to right,
+    #ff8177 0%,
+    #ff867a 0%,
+    #ff8c7f 21%,
+    #f99185 52%,
+    #cf556c 78%,
+    #b12a5b 100%
+  );
+}

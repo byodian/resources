@@ -1,0 +1,37 @@
+.page-detail > * {
+  text-align: center;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.detail--shadow {
+  box-shadow: 0 2px 2px 0 rgba(168, 178, 200, 0.25);
+}
+
+.detail__icon {
+  @extend %flex-center;
+  @include element-size(48px, 48px);
+  background-color: var(--orange);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.detail__icon svg {
+  fill: var(--white);
+}
+
+.detail__heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.detail__text {
+  font-size: 1rem;
+  line-height: 2;
+  margin: 0;
+}

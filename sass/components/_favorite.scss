@@ -1,0 +1,45 @@
+.favorite {
+  &__content {
+    position: relative;
+
+    a::after {
+      content: attr(data-title);
+      @extend %u-position-center;
+      opacity: 0;
+      z-index: 1;
+      font-size: 1.5rem;
+      color: var(--white);
+      transition: 0.2s ease-in-out;
+    }
+
+    a::before {
+      content: "";
+      @extend %u-position-cover;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1;
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  &__content:hover {
+    .box-photo img {
+      transform: scale(1.05);
+    }
+
+    a::after,
+    a::before {
+      opacity: 1;
+    }
+  }
+}
+
+.box-photo {
+  overflow: hidden;
+
+  img {
+    // Remove the space between inline-block elements
+    display: block;
+    transition: 0.2s ease-in-out;
+  }
+}

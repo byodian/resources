@@ -1,0 +1,86 @@
+.navbar {
+  background-color: var(--white);
+  box-shadow: 0 1px 10px rgba(180, 179, 255, 0.12);
+  color: var(--dark);
+  transition: 0.2s ease-in-out;
+}
+
+.navbar--fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  // header 元素层叠顺序置于类名为 hero 元素之上
+  // 其子代元素在任何情况下也将位于 hero 元素之上
+  z-index: 2;
+}
+
+.navbar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav__brand {
+  // Occupy rest space of the flex container
+  margin-right: auto;
+  // Remove space between inline-block elements
+  font-size: 0;
+}
+
+.nav__brand svg {
+  @include element-size(45px, 45px);
+}
+
+.nav__list {
+  display: flex;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.nav__list a {
+  @extend %flex-center;
+  min-height: 65px;
+  //  As the positioned ancestor of its pseudo element
+  position: relative;
+  padding: 0 2rem;
+  color: inherit;
+}
+
+.nav__list a::after {
+  content: "";
+  position: absolute;
+  left: 2rem;
+  bottom: 1rem;
+  right: 100%;
+  height: 2px;
+  background-image: var(--gradient);
+  transition: 0.2s ease;
+}
+
+.nav__list a:hover::after {
+  right: 2rem;
+}
+
+.nav__social {
+  margin-left: 2rem;
+
+  a {
+    @extend %flex-center;
+    min-height: 65px;
+  }
+
+  a svg {
+    @include element-size(24px, 24px);
+    fill: var(--green);
+  }
+
+  a:hover svg {
+    fill: var(--orange);
+  }
+}
+
+.navbar__nav--primary {
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
