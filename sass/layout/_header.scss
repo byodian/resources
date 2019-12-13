@@ -3,78 +3,121 @@
   box-shadow: 0 1px 10px rgba(180, 179, 255, 0.12);
   color: var(--dark);
   transition: 0.2s ease-in-out;
-}
 
-.navbar__nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
-.nav__brand {
-  // Occupy rest space of the flex container
-  margin-right: auto;
-  font-size: 2rem;
-  color: var(--red);
+    &--primary {
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+  }
 }
 
 .icon-sentiment_satisfied:before {
   content: "\e901";
 }
 
-.nav__brand:hover .icon-sentiment_satisfied:before {
-  content: "\e902";
-}
+.nav {
+  &__brand {
+    // Occupy rest space of the flex container
+    margin-right: auto;
+    font-size: 2rem;
+    color: var(--red);
 
-.nav__list {
-  display: flex;
-  margin-bottom: 0;
-  padding: 0;
-}
+    &:hover .icon-sentiment_satisfied:before {
+      content: "\e902";
+    }
+  }
 
-.nav__list a {
-  @extend %flex-center;
-  min-height: 65px;
-  //  As the positioned ancestor of its pseudo element
-  position: relative;
-  padding: 0 2rem;
-  color: inherit;
-}
+  &__list {
+    display: flex;
+    margin-bottom: 0;
+    padding: 0;
+  }
 
-.nav__list a::after {
-  content: "";
-  position: absolute;
-  left: 2rem;
-  bottom: 1rem;
-  right: 100%;
-  height: 2px;
-  background-image: var(--gradient);
-  transition: 0.2s ease;
-}
-
-.nav__list a:hover::after {
-  right: 2rem;
-}
-
-.nav__social {
-  margin-left: 2rem;
-
-  a {
+  &__link,
+  &__link-social {
     @extend %flex-center;
     min-height: 65px;
+    //  As the positioned ancestor of its pseudo element
+    position: relative;
+    padding: 0 2rem;
+    color: inherit;
   }
 
-  a svg {
-    @include element-size(24px, 24px);
+  &__link::after {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    bottom: 1rem;
+    right: 100%;
+    height: 2px;
+    background-image: var(--gradient);
+    transition: 0.2s ease;
   }
 
-  a:hover svg {
-    fill: var(--red);
+  &__link:hover::after {
+    right: 2rem;
+  }
+
+  &__item--has-dropdown {
+    //  As the positioned ancestor of its pseudo element
+    position: relative;
+  }
+
+  &__btn {
+    @extend %flex-center;
+    min-height: 65px;
+    padding: 0 2rem;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+
+    & svg {
+      transition: 0.2s ease-in-out;
+    }
+
+    &:hover svg {
+      transform: rotate(-180deg);
+    }
   }
 }
 
-.navbar__nav--primary {
-  @media screen and (max-width: 900px) {
-    display: none;
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 200px;
+  padding: 0.75rem;
+  transform: translateY(10px);
+  transition: 0.2s ease-in-out;
+
+  background-color: var(--white);
+  border-radius: 3px;
+
+  &__list {
+    padding: 0;
   }
+
+  &__link {
+    display: block;
+    padding: 1rem;
+
+    &:hover {
+      background-color: var(--blue-light);
+    }
+  }
+}
+
+.nav__item--has-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }

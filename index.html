@@ -15,28 +15,68 @@
   <header class="navbar">
     <div class="container nav__container">
       <nav class="navbar__nav navbar__nav--primary">
-        <a class="nav__brand" href="#">
+        <a class="nav__brand" href="https://webresource.netlify.com/">
           <i class="icon-sentiment_satisfied"></i>
         </a>
         <ul class="nav__list">
-          <li><a href="#favorite">推荐</a></li>
-          <li><a href="#resource">资源</a></li>
-          <li><a href="#inspiration">灵感</a></li>
-          <li><a href="#tools">工具</a></li>
-          <li><a href="#">社区平台</a></li>
+          <li class="nav__item">
+            <a class="nav__link" href="#favorite">推荐</a>
+          </li>
+          <li class="nav__item nav__item--has-dropdown">
+            <button class="nav__btn" href="#resource">资源
+              <svg width="10" height="7" viewBox="0 0 26 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                style="margin-left: 10px">
+                <line x1="0.353553" y1="0.646447" x2="13.3536" y2="13.6464" stroke="black"></line>
+                <line x1="12.6464" y1="13.6464" x2="25.6464" y2="0.646446" stroke="black"></line>
+              </svg>
+            </button>
+            <div class="dropdown">
+              <ul class="dropdown__list">
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href="#html">HTML & CSS</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href="#javascript">JavaScript</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href="#video">视频和音乐</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href="#photo">图片</a>
+                </li>
+                <li class="dropdown__item">
+                  <a class="dropdown__link" href="#icon">图标</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#inspiration">灵感</a class="nav__link">
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#tools">工具</a class="nav__link">
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">社区平台</a class="nav__link">
+          </li>
+          <li class="nav__item">
+            <a class="nav__link-social" href="https://github.com/byodian" target="_blank">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <title>github</title>
+                <path
+                  d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z">
+                </path>
+              </svg>
+            </a>
+          </li>
         </ul>
         <div class="nav__social">
-          <a href="https://github.com/byodian" target="_blank">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-              <title>github</title>
-              <path
-                d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z">
-              </path>
-            </svg>
-          </a>
+
         </div>
       </nav>
-      <nav class="navbar__nav navbar__nav--mobile"></nav>
+      <nav class="navbar__nav navbar__nav--mobile">
+
+      </nav>
     </div>
   </header>
 
@@ -164,7 +204,7 @@
       <div class="container">
 
         <section class="section section--hc">
-          <h3 class="u-title">HTML&CSS</h3>
+          <h3 class="u-title" id="html">HTML & CSS</h3>
           <div class="resource__container">
             <ul class="resource__list grid">
               <li class="resource__item col-3">
@@ -335,7 +375,7 @@
         </section>
 
         <section class="section section--javascript">
-          <h3 class="u-title">JavaScript</h3>
+          <h3 class="u-title" id="javascript">JavaScript</h3>
           <div class="resource__container">
             <ul class="grid resource__list">
               <li class="resource__item col-3">
@@ -413,7 +453,7 @@
         </section>
 
         <section class="section section--media">
-          <h3 class="u-title">Videos & Music</h3>
+          <h3 class="u-title" id="video">Videos & Music</h3>
           <div class="resource__container">
             <ul class="grid resource__list">
               <li class="resource__item col-3">
@@ -451,7 +491,7 @@
         </section>
 
         <section class="section section--photos">
-          <h3 class="u-title">图片</h3>
+          <h3 class="u-title" id="photo">图片</h3>
           <div class="resource__container">
             <ul class="grid resource__list">
               <li class="resource__item col-3">
@@ -499,7 +539,7 @@
         </section>
 
         <section class="section section--icons">
-          <h3 class="u-title">图标</h3>
+          <h3 class="u-title" id="icon">图标</h3>
           <div class="resource__container">
             <ul class="grid resource__list">
               <li class="resource__item col-3">
@@ -536,8 +576,8 @@
           </div>
         </section>
 
-        <section class="section section--inspirations" id="inspiration">
-          <h3 class="u-title">灵感</h3>
+        <section class="section section--inspirations">
+          <h3 class="u-title" id="inspiration">灵感</h3>
           <div class="resource__container">
             <ul class="grid resource__list">
               <li class="resource__item col-3">
@@ -598,9 +638,9 @@
       </div>
     </div>
 
-    <div class="group" id="tools">
+    <div class="group">
       <div class="container">
-        <h3 class="u-title">工具</h3>
+        <h3 class="u-title" id="tools">工具</h3>
         <div class="grid">
 
           <div class="col-3">

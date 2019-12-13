@@ -247,7 +247,7 @@ object {
 [class*="u-position-center"] {
   position: absolute !important; }
 
-.nav__list a, .nav__social a, .hero, .detail__icon {
+.nav__link, .nav__link-social, .nav__btn, .hero, .detail__icon {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -271,35 +271,36 @@ object {
   box-shadow: 0 1px 10px rgba(180, 179, 255, 0.12);
   color: var(--dark);
   transition: 0.2s ease-in-out; }
+  .navbar__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+    @media screen and (max-width: 900px) {
+      .navbar__nav--primary {
+        display: none; } }
 
-.navbar__nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center; }
+.icon-sentiment_satisfied:before {
+  content: "\e901"; }
 
 .nav__brand {
   margin-right: auto;
   font-size: 2rem;
   color: var(--red); }
-
-.icon-sentiment_satisfied:before {
-  content: "\e901"; }
-
-.nav__brand:hover .icon-sentiment_satisfied:before {
-  content: "\e902"; }
+  .nav__brand:hover .icon-sentiment_satisfied:before {
+    content: "\e902"; }
 
 .nav__list {
   display: flex;
   margin-bottom: 0;
   padding: 0; }
 
-.nav__list a {
+.nav__link, .nav__link-social {
   min-height: 65px;
   position: relative;
   padding: 0 2rem;
   color: inherit; }
 
-.nav__list a::after {
+.nav__link::after {
   content: "";
   position: absolute;
   left: 2rem;
@@ -309,22 +310,48 @@ object {
   background-image: var(--gradient);
   transition: 0.2s ease; }
 
-.nav__list a:hover::after {
+.nav__link:hover::after {
   right: 2rem; }
 
-.nav__social {
-  margin-left: 2rem; }
-  .nav__social a {
-    min-height: 65px; }
-  .nav__social a svg {
-    width: 24px;
-    height: 24px; }
-  .nav__social a:hover svg {
-    fill: var(--red); }
+.nav__item--has-dropdown {
+  position: relative; }
 
-@media screen and (max-width: 900px) {
-  .navbar__nav--primary {
-    display: none; } }
+.nav__btn {
+  min-height: 65px;
+  padding: 0 2rem;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer; }
+  .nav__btn svg {
+    transition: 0.2s ease-in-out; }
+  .nav__btn:hover svg {
+    transform: rotate(-180deg); }
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 200px;
+  padding: 0.75rem;
+  transform: translateY(10px);
+  transition: 0.2s ease-in-out;
+  background-color: var(--white);
+  border-radius: 3px; }
+  .dropdown__list {
+    padding: 0; }
+  .dropdown__link {
+    display: block;
+    padding: 1rem; }
+    .dropdown__link:hover {
+      background-color: var(--blue-light); }
+
+.nav__item--has-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0); }
 
 .hero {
   min-height: 90vh;
