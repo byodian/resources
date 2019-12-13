@@ -5,15 +5,6 @@
   transition: 0.2s ease-in-out;
 }
 
-.navbar--fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  // header 元素层叠顺序置于类名为 hero 元素之上
-  // 其子代元素在任何情况下也将位于 hero 元素之上
-  z-index: 2;
-}
-
 .navbar__nav {
   display: flex;
   flex-wrap: wrap;
@@ -23,12 +14,16 @@
 .nav__brand {
   // Occupy rest space of the flex container
   margin-right: auto;
-  // Remove space between inline-block elements
-  font-size: 0;
+  font-size: 2rem;
+  color: var(--red);
 }
 
-.nav__brand svg {
-  @include element-size(45px, 45px);
+.icon-sentiment_satisfied:before {
+  content: "\e901";
+}
+
+.nav__brand:hover .icon-sentiment_satisfied:before {
+  content: "\e902";
 }
 
 .nav__list {
@@ -71,11 +66,10 @@
 
   a svg {
     @include element-size(24px, 24px);
-    fill: var(--green);
   }
 
   a:hover svg {
-    fill: var(--orange);
+    fill: var(--red);
   }
 }
 

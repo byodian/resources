@@ -1,29 +1,36 @@
 // Newsletter component
 .newsletter__container {
   display: flex;
-  flex-wrap: wrap;
   height: 40px;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+.newsletter__container > * {
+  padding: 0.25rem 0.5rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 0.5rem 0.75rem;
+  }
 }
 
 .newsletter__input {
-  flex: 1;
-  padding: 0.25rem 1rem;
+  flex: 9;
   border-radius: 2px;
   border: none;
 }
 
 .newsletter__btn {
-  flex: 0 1 100px;
+  flex: 1;
   margin-left: 1rem;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--orange);
-  background-color: transparent;
-  color: var(--orange);
-  border-radius: 2px;
-}
-
-.newsletter__btn:hover {
   border: none;
   background-color: var(--orange);
   color: var(--dark);
+  border-radius: 2px;
+
+  @media screen and (max-width: 500px) {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
 }

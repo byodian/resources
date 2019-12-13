@@ -1,6 +1,7 @@
 // hreo image
 .hero {
-  min-height: 95vh;
+  @extend %flex-center;
+  min-height: 90vh;
   background-color: var(--blue-light);
   color: var(--white);
   background-image: linear-gradient(
@@ -10,8 +11,4 @@
     ),
     url(../img/hero3x.jpg);
   background-size: cover;
-}
-
-.hero--flex {
-  @extend %flex-center;
 }

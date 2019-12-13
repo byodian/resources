@@ -12,14 +12,11 @@
 </head>
 
 <body>
-  <header class="navbar navbar--fixed">
+  <header class="navbar">
     <div class="container nav__container">
       <nav class="navbar__nav navbar__nav--primary">
         <a class="nav__brand" href="#">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-            <title>home3</title>
-            <path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z"></path>
-          </svg>
+          <i class="icon-sentiment_satisfied"></i>
         </a>
         <ul class="nav__list">
           <li><a href="#favorite">推荐</a></li>
@@ -45,20 +42,15 @@
 
   <main class="main">
 
-    <div class="hero hero--flex">
-      <div>
-        <h1 class="u-margin">学习 Web 前端开发和设计技术</h1>
-        <div>
-          <form id="newsletter" action="#">
-            <div class="newsletter__container">
-              <input class="newsletter__input" type="email" name="Newsletter" placeholder="邮箱地址">
-              <button class="newsletter__btn">订阅</button>
-            </div>
-          </form>
-        </div>
-        <div class="u-margin-top text-center">
-          <p>订阅可获取最新更新！</p>
-        </div>
+    <div class="hero">
+      <div class="container">
+        <h2 class="u-margin-bottom">学习 Web 前端开发和设计技术</h2>
+        <form id="newsletter" action="#">
+          <div class="newsletter__container">
+            <input class="newsletter__input" type="email" name="Newsletter" placeholder="邮箱地址">
+            <button class="newsletter__btn">订阅</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -121,7 +113,7 @@
             <figure class="favorite__content">
               <a href="https://zh.javascript.info/" target="_blank" data-title="现代 javascript 教程">
                 <div class="box-photo">
-                  <img src="./img/example.png" alt="jsinfo">
+                  <img src="./img/example.jpg" alt="jsinfo">
                 </div>
               </a>
             </figure>
@@ -130,7 +122,7 @@
             <figure class="favorite__content">
               <a href="https://css-tricks.com/" target="_blank" data-title="CSS-Tricks">
                 <div class="box-photo">
-                  <img src="./img/example.png" alt="jsinfo">
+                  <img src="./img/example.jpg" alt="jsinfo">
                 </div>
               </a>
             </figure>
@@ -727,7 +719,7 @@
             <div class="card">
               <a href="https://www.modularscale.com/" target="_blank">
                 <div class="card__top">
-                  <div class="card__image card__image--9"></div>
+                  <div class="card__image card__image--8"></div>
                 </div>
                 <div class="card__body">
                   <h4 class="card__title">Modular Scale</h4>
@@ -741,7 +733,7 @@
             <div class="card">
               <a href="https://picsum.photos/" target="_blank">
                 <div class="card__top">
-                  <div class="card__image card__image--10"></div>
+                  <div class="card__image card__image--9"></div>
                 </div>
                 <div class="card__body">
                   <h4 class="card__title">Lorem Picsum</h4>
@@ -755,7 +747,7 @@
             <div class="card">
               <a href="https://dummyimage.com/" target="_blank">
                 <div class="card__top">
-                  <div class="card__image card__image--11"></div>
+                  <div class="card__image card__image--10"></div>
                 </div>
                 <div class="card__body">
                   <h4 class="card__title">图片生成器</h4>
@@ -784,7 +776,6 @@
     </div>
   </main>
 
-  <script src="./js/main.js"></script>
 </body>
 
 </html>

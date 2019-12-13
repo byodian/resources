@@ -128,6 +128,27 @@ object {
     #b12a5b 100%
   ); }
 
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon.eot?sbvjdl");
+  src: url("../fonts/icomoon.eot?sbvjdl#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?sbvjdl") format("truetype"), url("../fonts/icomoon.woff?sbvjdl") format("woff"), url("../fonts/icomoon.svg?sbvjdl#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 .container {
   padding-left: 3rem;
   padding-right: 3rem; }
@@ -190,6 +211,9 @@ object {
 .u-margin-top {
   margin-top: 1.5rem !important; }
 
+.u-margin-bottom {
+  margin-bottom: 1.5rem !important; }
+
 .u-margin {
   margin-bottom: 2.5rem !important;
   margin-top: 2.5rem !important; }
@@ -199,7 +223,7 @@ object {
 
 .u-title {
   position: relative;
-  width: max-content;
+  display: inline-block;
   margin-bottom: 0;
   padding-top: 0.5rem;
   padding-bottom: 3rem;
@@ -223,7 +247,7 @@ object {
 [class*="u-position-center"] {
   position: absolute !important; }
 
-.nav__list a, .nav__social a, .hero--flex, .detail__icon {
+.nav__list a, .nav__social a, .hero, .detail__icon {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -248,12 +272,6 @@ object {
   color: var(--dark);
   transition: 0.2s ease-in-out; }
 
-.navbar--fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 2; }
-
 .navbar__nav {
   display: flex;
   flex-wrap: wrap;
@@ -261,11 +279,14 @@ object {
 
 .nav__brand {
   margin-right: auto;
-  font-size: 0; }
+  font-size: 2rem;
+  color: var(--red); }
 
-.nav__brand svg {
-  width: 45px;
-  height: 45px; }
+.icon-sentiment_satisfied:before {
+  content: "\e901"; }
+
+.nav__brand:hover .icon-sentiment_satisfied:before {
+  content: "\e902"; }
 
 .nav__list {
   display: flex;
@@ -297,17 +318,16 @@ object {
     min-height: 65px; }
   .nav__social a svg {
     width: 24px;
-    height: 24px;
-    fill: var(--green); }
+    height: 24px; }
   .nav__social a:hover svg {
-    fill: var(--orange); }
+    fill: var(--red); }
 
 @media screen and (max-width: 900px) {
   .navbar__nav--primary {
     display: none; } }
 
 .hero {
-  min-height: 95vh;
+  min-height: 90vh;
   background-color: var(--blue-light);
   color: var(--white);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url(../img/hero3x.jpg);
@@ -315,28 +335,33 @@ object {
 
 .newsletter__container {
   display: flex;
-  flex-wrap: wrap;
   height: 40px; }
+  @media screen and (max-width: 500px) {
+    .newsletter__container {
+      flex-direction: column; } }
+
+.newsletter__container > * {
+  padding: 0.25rem 0.5rem; }
+  @media screen and (max-width: 500px) {
+    .newsletter__container > * {
+      padding: 0.5rem 0.75rem; } }
 
 .newsletter__input {
-  flex: 1;
-  padding: 0.25rem 1rem;
+  flex: 9;
   border-radius: 2px;
   border: none; }
 
 .newsletter__btn {
-  flex: 0 1 100px;
+  flex: 1;
   margin-left: 1rem;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--orange);
-  background-color: transparent;
-  color: var(--orange);
-  border-radius: 2px; }
-
-.newsletter__btn:hover {
   border: none;
   background-color: var(--orange);
-  color: var(--dark); }
+  color: var(--dark);
+  border-radius: 2px; }
+  @media screen and (max-width: 500px) {
+    .newsletter__btn {
+      margin-top: 1rem;
+      margin-left: 0; } }
 
 .group {
   min-height: 300px;
@@ -451,11 +476,35 @@ object {
   border-radius: 3px;
   height: 100%; }
   .card__image {
-    padding-bottom: 100%;
+    padding-bottom: 75%;
     background-color: var(--dark);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; }
+    .card__image--1 {
+      background-image: url(../../img/photoeditor.jpg); }
+    .card__image--2 {
+      background-image: url(../../img/svgomg.jpg); }
+    .card__image--3 {
+      background-image: url(../../img/gradient1.jpg); }
+    .card__image--4 {
+      background-image: url(../../img/gradient2.jpg); }
+    .card__image--5 {
+      background-image: url(../../img/curve.jpg); }
+    .card__image--6 {
+      background-image: url(../../img/curve1.jpg); }
+    .card__image--7 {
+      background-image: url(../../img/tool.jpg); }
+    .card__image--8 {
+      background-image: url(../../img/scale.jpg); }
+    .card__image--8 {
+      background-image: url(../../img/scale.jpg); }
+    .card__image--9 {
+      background-image: url(../../img/gallery1.jpg); }
+    .card__image--10 {
+      background-image: url(../../img/gallery2.jpg); }
+    .card__image--11 {
+      background-image: url(../../img/answer.jpg); }
   .card__body {
     border-top: 2px solid var(--dark);
     padding: 2.5rem 1rem 0; }

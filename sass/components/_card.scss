@@ -4,11 +4,60 @@
   height: 100%;
 
   &__image {
-    padding-bottom: 100%;
+    // height/width = .75
+    padding-bottom: 75%;
     background-color: var(--dark);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
+    &--1 {
+      background-image: url(../../img/photoeditor.jpg);
+    }
+
+    &--2 {
+      background-image: url(../../img/svgomg.jpg);
+    }
+
+    &--3 {
+      background-image: url(../../img/gradient1.jpg);
+    }
+
+    &--4 {
+      background-image: url(../../img/gradient2.jpg);
+    }
+
+    &--5 {
+      background-image: url(../../img/curve.jpg);
+    }
+
+    &--6 {
+      background-image: url(../../img/curve1.jpg);
+    }
+
+    &--7 {
+      background-image: url(../../img/tool.jpg);
+    }
+
+    &--8 {
+      background-image: url(../../img/scale.jpg);
+    }
+
+    &--8 {
+      background-image: url(../../img/scale.jpg);
+    }
+
+    &--9 {
+      background-image: url(../../img/gallery1.jpg);
+    }
+
+    &--10 {
+      background-image: url(../../img/gallery2.jpg);
+    }
+
+    &--11 {
+      background-image: url(../../img/answer.jpg);
+    }
   }
 
   &__body {
