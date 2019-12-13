@@ -14,10 +14,17 @@
 <body>
   <header class="navbar">
     <div class="container nav__container">
+
+      <input class="navbar-checkbox" type="checkbox" id="navbar-checkbox">
+      <label class="mobile-menu" for="navbar-checkbox">
+        <span class="mobile-menu-btn"></span>
+      </label>
+
+      <a class="nav__brand" href="https://webresource.netlify.com/">
+        <i class="icon-sentiment_satisfied"></i>
+      </a>
+
       <nav class="navbar__nav navbar__nav--primary">
-        <a class="nav__brand" href="https://webresource.netlify.com/">
-          <i class="icon-sentiment_satisfied"></i>
-        </a>
         <ul class="nav__list">
           <li class="nav__item">
             <a class="nav__link" href="#favorite">推荐</a>
@@ -59,7 +66,7 @@
           <li class="nav__item">
             <a class="nav__link" href="#">社区平台</a class="nav__link">
           </li>
-          <li class="nav__item">
+          <li class="nav__item nav__item-social">
             <a class="nav__link-social" href="https://github.com/byodian" target="_blank">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                 <title>github</title>
@@ -70,12 +77,45 @@
             </a>
           </li>
         </ul>
-        <div class="nav__social">
-
-        </div>
       </nav>
-      <nav class="navbar__nav navbar__nav--mobile">
 
+      <nav class="navbar__nav--mobile">
+        <div class="nav__container--mobile">
+          <ul class="nav__list--mobile">
+            <li class="nav__item--mobile">
+              <a class="nav__link--mobile" href="#favorite">推荐</a>
+            </li>
+            <li class="nav__item--mobile">
+              <button class="nav__btn--mobile" href="#resource">资源</button>
+              <ul class="dropdown__list--mobile">
+                <li class="dropdown__item--mobile">
+                  <a class="dropdown__link--mobile" href="#html">HTML & CSS</a>
+                </li>
+                <li class="dropdown__item--mobile">
+                  <a class="dropdown__link--mobile" href="#javascript">JavaScript</a>
+                </li>
+                <li class="dropdown__item--mobile">
+                  <a class="dropdown__link--mobile" href="#video">视频和音乐</a>
+                </li>
+                <li class="dropdown__item--mobile">
+                  <a class="dropdown__link--mobile" href="#photo">图片</a>
+                </li>
+                <li class="dropdown__item--mobile">
+                  <a class="dropdown__link--mobile" href="#icon">图标</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav__item--mobile">
+              <a class="nav__link--mobile" href="#inspiration">灵感</a class="nav__link--mobile">
+            </li>
+            <li class="nav__item--mobile">
+              <a class="nav__link--mobile" href="#tools">工具</a class="nav__link">
+            </li>
+            <li class="nav__item--mobile">
+              <a class="nav__link--mobile" href="#">社区平台</a class="nav__link">
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   </header>
