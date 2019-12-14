@@ -42,17 +42,15 @@
 
 // Navbar checkbox
 .navbar-checkbox {
+  // 隐藏复选框
   display: none;
 }
 
 .mobile-menu {
-  display: none;
+  // display: none;
   position: absolute;
-  top: 0;
-  bottom: 0;
   width: 45px;
   right: 20px;
-  z-index: 3;
 
   @media screen and (max-width: 900px) {
     display: block;
@@ -73,7 +71,7 @@
       top: 0.5rem;
       width: 100%;
       height: 2px;
-      background-color: inherit;
+      background-color: var(--dark);
     }
 
     &::before {
@@ -82,7 +80,33 @@
       top: -0.5rem;
       width: 100%;
       height: 2px;
-      background-color: inherit;
+      background-color: var(--dark);
+    }
+  }
+}
+
+.mobile-menu {
+  &-1 {
+    top: 0;
+    bottom: 0;
+  }
+
+  &-2 {
+    height: 48px;
+    z-index: 3;
+
+    .mobile-menu-btn {
+      background-color: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
     }
   }
 }
@@ -115,10 +139,6 @@
     margin-right: auto;
     font-size: 2rem;
     color: var(--red);
-
-    @media screen and (max-width: 500px) {
-      font-size: 1.5rem;
-    }
 
     &:hover .icon-sentiment_satisfied:before {
       content: "\e902";
@@ -225,8 +245,6 @@
 }
 
 // Navbar Mobile
-.navbar__nav--mobile {
-}
 
 .nav {
   &__list--mobile {
@@ -253,6 +271,7 @@
 .dropdown {
   &__list--mobile {
     padding-left: 0;
+    font-size: 0.8rem;
   }
 
   &__item--mobile {
