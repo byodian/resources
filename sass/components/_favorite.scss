@@ -1,29 +1,33 @@
 .favorite {
-  &__content {
+  &__item {
+    // 定位祖先
     position: relative;
-
-    a::after {
-      content: attr(data-title);
-      @extend %u-position-center;
-      opacity: 0;
-      z-index: 1;
-      font-size: 1.5rem;
-      color: var(--white);
-      transition: 0.2s ease-in-out;
-    }
 
     a::before {
       content: "";
       @extend %u-position-cover;
-      opacity: 0;
-      background-color: rgba(0, 0, 0, 0.8);
+      // 层叠顺序大于已经创建层叠上下文的 img 元素
       z-index: 1;
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      transition: 0.2s ease-in-out;
+    }
+
+    a::after {
+      content: attr(data-title);
+      @extend %u-position-center;
+      // 层叠顺序大于已经创建层叠上下文的 img 元素和 a::before 元素
+      z-index: 1;
+      font-size: 1.5rem;
+      color: var(--white);
+      opacity: 0;
       transition: 0.2s ease-in-out;
     }
   }
 
-  &__content:hover {
+  &__item:hover {
     .box-photo img {
+      // 创建层叠上下文，层叠顺序大于 z-index: auto 的普通定位元素
       transform: scale(1.05);
     }
 
@@ -35,6 +39,7 @@
 }
 
 .box-photo {
+  // 隐藏 img 元素放大时超出的部分
   overflow: hidden;
 
   img {

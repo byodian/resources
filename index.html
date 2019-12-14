@@ -15,16 +15,21 @@
   <header class="navbar">
     <div class="container nav__container">
 
-      <input class="navbar-checkbox" type="checkbox" id="navbar-checkbox">
-      <label class="mobile-menu mobile-menu-1" for="navbar-checkbox">
-        <span class="mobile-menu-btn"></span>
-      </label>
-
       <a class="nav__brand" href="https://webresource.netlify.com/">
         <i class="icon-sentiment_satisfied"></i>
       </a>
 
-      <nav class="navbar__nav navbar__nav--primary">
+      <!-- 
+      技巧：使用复选框伪类 :checked, 模拟点击事件
+      使用兄弟选择符 '~' 可选中 navbar__nav--mobile 元素
+      CSS 代码: .navbar-checkbox:checked ~ .navbar__nav--mobile {...} 
+      -->
+      <input class="navbar-checkbox" type="checkbox" id="navbar-checkbox">
+      <label class="mobile__menu mobile__menu--1" for="navbar-checkbox">
+        <span class="menu__btn menu__btn--1"></span>
+      </label>
+
+      <nav class="navbar__nav navbar__nav--desktop">
         <ul class="nav__list">
           <li class="nav__item">
             <a class="nav__link" href="#favorite">推荐</a>
@@ -80,46 +85,46 @@
       </nav>
 
       <nav class="navbar__nav--mobile">
-        <label class="mobile-menu mobile-menu-2" for="navbar-checkbox">
-          <span class="mobile-menu-btn"></span>
-        </label>
 
-        <div class="nav__container--mobile">
-          <ul class="nav__list--mobile">
-            <li class="nav__item--mobile">
-              <a class="nav__link--mobile" href="#favorite">推荐</a>
-            </li>
-            <li class="nav__item--mobile">
-              <button class="nav__btn--mobile" href="#resource">资源</button>
-              <ul class="dropdown__list--mobile">
-                <li class="dropdown__item--mobile">
-                  <a class="dropdown__link--mobile" href="#html">HTML & CSS</a>
-                </li>
-                <li class="dropdown__item--mobile">
-                  <a class="dropdown__link--mobile" href="#javascript">JavaScript</a>
-                </li>
-                <li class="dropdown__item--mobile">
-                  <a class="dropdown__link--mobile" href="#video">视频和音乐</a>
-                </li>
-                <li class="dropdown__item--mobile">
-                  <a class="dropdown__link--mobile" href="#photo">图片</a>
-                </li>
-                <li class="dropdown__item--mobile">
-                  <a class="dropdown__link--mobile" href="#icon">图标</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav__item--mobile">
-              <a class="nav__link--mobile" href="#inspiration">灵感</a class="nav__link--mobile">
-            </li>
-            <li class="nav__item--mobile">
-              <a class="nav__link--mobile" href="#tools">工具</a class="nav__link">
-            </li>
-            <li class="nav__item--mobile">
-              <a class="nav__link--mobile" href="#">社区平台</a class="nav__link">
-            </li>
-          </ul>
-        </div>
+
+        <ul class="nav__list--mobile">
+          <li class="nav__item--mobile">
+            <a class="nav__link--mobile" href="#favorite">推荐</a>
+          </li>
+          <li class="nav__item--mobile">
+            <button class="nav__btn--mobile" href="#resource">资源</button>
+            <ul class="dropdown__list--mobile">
+              <li class="dropdown__item--mobile">
+                <a class="dropdown__link--mobile" href="#html">HTML & CSS</a>
+              </li>
+              <li class="dropdown__item--mobile">
+                <a class="dropdown__link--mobile" href="#javascript">JavaScript</a>
+              </li>
+              <li class="dropdown__item--mobile">
+                <a class="dropdown__link--mobile" href="#video">视频和音乐</a>
+              </li>
+              <li class="dropdown__item--mobile">
+                <a class="dropdown__link--mobile" href="#photo">图片</a>
+              </li>
+              <li class="dropdown__item--mobile">
+                <a class="dropdown__link--mobile" href="#icon">图标</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item--mobile">
+            <a class="nav__link--mobile" href="#inspiration">灵感</a class="nav__link--mobile">
+          </li>
+          <li class="nav__item--mobile">
+            <a class="nav__link--mobile" href="#tools">工具</a class="nav__link">
+          </li>
+          <li class="nav__item--mobile">
+            <a class="nav__link--mobile" href="#">社区平台</a class="nav__link">
+          </li>
+        </ul>
+        <!-- 移动端可以隐藏导航栏的按钮 -->
+        <label class="mobile__menu mobile__menu--2" for="navbar-checkbox">
+          <span class="menu__btn menu__btn--2"></span>
+        </label>
       </nav>
     </div>
   </header>
@@ -194,7 +199,7 @@
       <div class="container group__favorite">
         <div class="grid">
           <div class="col-2">
-            <figure class="favorite__content">
+            <figure class="favorite__item">
               <a href="https://zh.javascript.info/" target="_blank" data-title="现代 javascript 教程">
                 <div class="box-photo">
                   <img src="./img/example.jpg" alt="jsinfo">
@@ -203,7 +208,7 @@
             </figure>
           </div>
           <div class="col-2">
-            <figure class="favorite__content">
+            <figure class="favorite__item">
               <a href="https://css-tricks.com/" target="_blank" data-title="CSS-Tricks">
                 <div class="box-photo">
                   <img src="./img/example.jpg" alt="jsinfo">
@@ -214,7 +219,7 @@
         </div>
         <div class="grid">
           <div class="col-3">
-            <figure class="favorite__content">
+            <figure class="favorite__item">
               <a href="https://www.awwwards.com/" target="_blank" data-title="Awwwards - Website Awards">
                 <div class="box-photo">
                   <img src="./img/small1.jpg" alt="jsinfo">
@@ -223,7 +228,7 @@
             </figure>
           </div>
           <div class="col-3">
-            <figure class="favorite__content">
+            <figure class="favorite__item">
               <a href="https://webgradients.com/" target="_blank" data-title="WebGradients">
                 <div class="box-photo">
                   <img src="./img/small2.jpg" alt="jsinfo">
@@ -232,7 +237,7 @@
             </figure>
           </div>
           <div class="col-3">
-            <figure class="favorite__content">
+            <figure class="favorite__item">
               <a href="https://icomoon.io/" target="_blank" data-title="IcoMoon App">
                 <div class="box-photo">
                   <img src="./img/small3.jpg" alt="jsinfo">
@@ -318,8 +323,7 @@
                 <a href="https://cssreference.io/" target="_blank">
                   <img class="resource__img" src="./img/tutsplus.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      你必须要记住的 30 个选择器</h4>
+                    <h4 class="resource__heading">你必须要记住的 30 个选择器</h4>
                     <p class="resource__text">文章</p>
                   </div>
                 </a>
@@ -328,8 +332,7 @@
                 <a href="https://codepen.io/shshaw/full/gEiDt" target="_blank">
                   <img class="resource__img" src="./img/codepen.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      Absolute Centering</h4>
+                    <h4 class="resource__heading">Absolute Centering</h4>
                     <p class="resource__text">使用绝对定位实现居中布局</p>
                   </div>
                 </a>
@@ -338,8 +341,7 @@
                 <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">
                   <img class="resource__img" src="./img/csstricks.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      A Complete Guide to Flexbox</h4>
+                    <h4 class="resource__heading">A Complete Guide to Flexbox</h4>
                     <p class="resource__text">Flexbox 完整指南</p>
                   </div>
                 </a>
@@ -348,8 +350,7 @@
                 <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">
                   <img class="resource__img" src="./img/csstricks.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      A Complete Guide to Grid</h4>
+                    <h4 class="resource__heading">A Complete Guide to Grid</h4>
                     <p class="resource__text">Grid 完整指南网格布局</p>
                   </div>
                 </a>
@@ -358,8 +359,7 @@
                 <a href="https://css-tricks.com/the-shapes-of-css/" target="_blank">
                   <img class="resource__img" src="./img/csstricks.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      The Shapes of CSS</h4>
+                    <h4 class="resource__heading">The Shapes of CSS</h4>
                     <p class="resource__text"> CSS 形状</p>
                   </div>
                 </a>
@@ -368,8 +368,7 @@
                 <a href="https://paulcpederson.com/articles/css-for-people-who-hate-css/" target="_blank">
                   <img class="resource__img" src="./img/csshate.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      为什么人们讨厌 CSS</h4>
+                    <h4 class="resource__heading">为什么人们讨厌 CSS</h4>
                     <p class="resource__text">文章</p>
                   </div>
                 </a>
@@ -378,8 +377,7 @@
                 <a href="https://bradfrost.github.io/this-is-responsive/" target="_blank">
                   <img class="resource__img" src="./img/file-app.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      This is Responsive</h4>
+                    <h4 class="resource__heading">This is Responsive</h4>
                     <p class="resource__text">收集创造响应式网站的模块和资源</p>
                   </div>
                 </a>
@@ -388,8 +386,7 @@
                 <a href="https://lhammer.cn/You-need-to-know-css/#/" target="_blank">
                   <img class="resource__img" src="./img/43-tricks.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      你需要知道的 CSS 技巧</h4>
+                    <h4 class="resource__heading">你需要知道的 CSS 技巧</h4>
                     <p class="resource__text">CSS 技巧</p>
                   </div>
                 </a>
@@ -398,8 +395,7 @@
                 <a href="https://cssguidelin.es/" target="_blank">
                   <img class="resource__img" src="./img/cssguidelin.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      css 样式规范指南</h4>
+                    <h4 class="resource__heading">css 样式规范指南</h4>
                     <p class="resource__text">详细的 CSS 规范指南</p>
                   </div>
                 </a>
@@ -408,9 +404,17 @@
                 <a href="https://codeguide.co/" target="_blank">
                   <img class="resource__img" src="./img/codeguide.png">
                   <div class="resource__detail">
-                    <h4 class="resource__heading">
-                      css 样式规范指南</h4>
+                    <h4 class="resource__heading">css 样式规范指南</h4>
                     <p class="resource__text">常规的规范指南</p>
+                  </div>
+                </a>
+              </li>
+              <li class="resource__item col-3">
+                <a href="https://css3test.com/" target="_blank">
+                  <img class="resource__img" src="./img/file-app.png">
+                  <div class="resource__detail">
+                    <h4 class="resource__heading">The CSS3 Test</h4>
+                    <p class="resource__text">css3 浏览器支持度测试</p>
                   </div>
                 </a>
               </li>
