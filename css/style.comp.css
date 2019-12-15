@@ -285,6 +285,7 @@ object {
   align-items: center; }
 
 .nav__brand {
+  line-height: 65px;
   margin-right: auto;
   font-size: 2rem;
   color: var(--red); }
@@ -384,7 +385,7 @@ object {
     top: 0;
     bottom: 0; }
   .mobile__menu--2 {
-    height: 48px; }
+    height: 65px; }
 
 .menu__btn {
   position: absolute;
@@ -425,11 +426,11 @@ object {
 
 .nav__list--mobile {
   position: absolute;
-  top: 0;
-  bottom: 0;
   right: 0;
   width: 200px;
-  padding-top: 10px;
+  height: 100%;
+  padding-top: 18px;
+  margin-bottom: 0;
   background-color: var(--white);
   transform: translateX(300px);
   transition: 0.2s ease-in-out; }
