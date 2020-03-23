@@ -479,6 +479,9 @@ object {
     .hero {
       min-height: 65vh; } }
 
+.hero-container {
+  width: 500px; }
+
 .newsletter__container {
   display: flex;
   height: 40px; }
@@ -530,9 +533,6 @@ object {
   background-color: var(--orange);
   border-radius: 50%;
   margin-bottom: 2rem; }
-
-.detail__icon svg {
-  fill: var(--white); }
 
 .detail__heading {
   font-size: 1.25rem;
