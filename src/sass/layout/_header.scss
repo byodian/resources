@@ -1,0 +1,294 @@
+.navbar {
+  color: var(--dark);
+  background-color: var(--white);
+  box-shadow: 0 1px 10px rgba(180, 179, 255, 0.12);
+  transition: 0.2s ease-in-out;
+
+  // 移动设备屏幕上隐藏主导航栏
+  &__nav--desktop {
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+}
+
+.icon-sentiment_satisfied:before {
+  content: "\e901";
+}
+
+.icon-sentiment_satisfied:hover:before {
+  content: "\e902";
+}
+
+// Navbar Destop
+
+.nav {
+  &__container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__brand {
+    // Occupy rest space of the flex container
+    line-height: 65px;
+    margin-right: auto;
+    font-size: 2rem;
+    color: var(--red);
+  }
+
+  &__list {
+    display: flex;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  &__link,
+  &__link-social {
+    @extend %flex-center;
+    min-height: 65px;
+    //  As the positioned ancestor of its pseudo element
+    position: relative;
+    padding: 0 2rem;
+    color: inherit;
+  }
+
+  &__link::after {
+    content: "";
+    position: absolute;
+    left: 2rem;
+    bottom: 1rem;
+    right: 100%;
+    height: 2px;
+    background-image: var(--gradient);
+    transition: 0.2s ease;
+  }
+
+  &__link:hover::after {
+    right: 2rem;
+  }
+
+  &__link-social {
+    svg {
+      @include element-size(24px, 24px);
+    }
+
+    &:hover svg {
+      fill: var(--red);
+    }
+  }
+
+  &__item--has-dropdown {
+    //  As the positioned ancestor of its pseudo element
+    position: relative;
+  }
+
+  &__btn {
+    @extend %flex-center;
+    min-height: 65px;
+    padding: 0 2rem;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+
+    & svg {
+      transition: 0.2s ease-in-out;
+    }
+
+    &:hover svg {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  min-width: 200px;
+  padding: 0.75rem;
+  transform: translateY(10px);
+  transition: 0.2s ease-in-out;
+
+  background-color: var(--white);
+  border-radius: 3px;
+
+  &__list {
+    padding: 0;
+  }
+
+  &__link {
+    display: block;
+    padding: 1rem;
+
+    &:hover {
+      background-color: var(--blue-light);
+    }
+  }
+}
+
+.nav__item--has-dropdown:hover .dropdown {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// Navbar Mobile
+.navbar__nav--mobile {
+  // 移动端全屏 popup 导航栏
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // 层叠顺序大于组件 favorite 中的类名为 favorite__item 元素
+  z-index: 2;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.mobile__menu {
+  // 桌面端屏幕默认隐藏
+  display: none;
+  // 定位祖先元素是类名为 nav__contianer 元素
+  position: absolute;
+  width: 45px;
+  right: 20px;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+
+  &--1 {
+    // 高度等于父元素高度
+    top: 0;
+    bottom: 0;
+  }
+
+  // 定位祖先元素是类名为 navbar__nav--mobile 的元素
+  &--2 {
+    height: 65px;
+  }
+}
+
+.menu__btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  height: 2px;
+  transform: translateX(-50%);
+  background-color: var(--dark);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+  }
+}
+
+.menu__btn--1 {
+  transition-delay: 0.3s;
+}
+
+.menu__btn--2 {
+  background-color: transparent;
+
+  &::before {
+    top: 0;
+    transform: rotate(45deg);
+    background-color: var(--dark);
+  }
+
+  &::after {
+    top: 0;
+    transform: rotate(-45deg);
+    background-color: var(--dark);
+  }
+}
+
+.nav {
+  &__list--mobile {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    padding-top: 18px;
+    margin-bottom: 0;
+    background-color: var(--white);
+    transform: translateX(300px);
+    transition: 0.2s ease-in-out;
+  }
+
+  &__item--mobile {
+    padding: 0.25rem 0.5rem;
+  }
+
+  &__link--mobile {
+    &:hover {
+      color: var(--red);
+    }
+  }
+
+  &__btn--mobile {
+    background-color: transparent;
+    padding-left: 0;
+    border: none;
+  }
+}
+
+.dropdown {
+  &__list--mobile {
+    padding-left: 0;
+    font-size: 0.8rem;
+  }
+
+  &__item--mobile {
+    padding: 0.25rem 0.5rem;
+  }
+
+  &__link--mobile {
+    &:hover {
+      color: var(--red);
+    }
+  }
+}
+
+// Navbar checkbox
+.navbar-checkbox {
+  // 隐藏复选框
+  display: none;
+}
+
+.navbar-checkbox:checked ~ .mobile__menu .menu__btn--1 {
+  background-color: transparent;
+}
+
+.navbar-checkbox:checked ~ .navbar__nav--mobile {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-checkbox:checked ~ .navbar__nav--mobile .nav__list--mobile {
+  transform: translateX(0);
+}

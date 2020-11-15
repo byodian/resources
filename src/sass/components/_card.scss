@@ -1,0 +1,94 @@
+.card {
+  border: 2px solid var(--dark);
+  border-radius: 3px;
+  height: 100%;
+
+  &__image {
+    // height/width = .75
+    padding-bottom: 75%;
+    background-color: var(--dark);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &--1 {
+      background-image: url(../../src/assets/img/photoeditor.jpg);
+    }
+
+    &--2 {
+      background-image: url(../../src/assets/img/svgomg.jpg);
+    }
+
+    &--3 {
+      background-image: url(../../src/assets/img/gradient1.jpg);
+    }
+
+    &--4 {
+      background-image: url(../../src/assets/img/gradient2.jpg);
+    }
+
+    &--5 {
+      background-image: url(../../src/assets/img/curve.jpg);
+    }
+
+    &--6 {
+      background-image: url(../../src/assets/img/curve1.jpg);
+    }
+
+    &--7 {
+      background-image: url(../../src/assets/img/tool.jpg);
+    }
+
+    &--8 {
+      background-image: url(../../src/assets/img/scale.jpg);
+    }
+
+    &--8 {
+      background-image: url(../../src/assets/img/scale.jpg);
+    }
+
+    &--9 {
+      background-image: url(../../src/assets/img/gallery1.jpg);
+    }
+
+    &--10 {
+      background-image: url(../../src/assets/img/gallery2.jpg);
+    }
+
+    &--11 {
+      background-image: url(../../src/assets/img/answer.jpg);
+    }
+  }
+
+  &__body {
+    border-top: 2px solid var(--dark);
+    padding: 2.5rem 1rem 0;
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+    font-weight: 700;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+      transition: 0.2s ease-in-out;
+      background-image: var(--gradient);
+    }
+  }
+
+  &__description {
+    text-align: justify;
+    letter-spacing: 1px;
+  }
+
+  &:hover &__title::after {
+    right: 0;
+  }
+}
