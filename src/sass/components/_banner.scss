@@ -1,0 +1,17 @@
+#banner {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 2rem;
+
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: var(--general-shadow);
+}
+
+.banner {
+  &_img {
+    width: 800px;
+    height: auto;
+  }
+}

@@ -1,3 +1,66 @@
+#top_bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 46px;
+  display: flex;
+  padding-left: 4.2rem;
+  padding-right: 4.2rem;
+  box-shadow: 0 1px 1px rgba(155, 155, 155, 0.3);
+  background-color: #fff;
+  z-index: 200;
+
+  &_inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.left_control {
+  display: flex;
+  height: 100%;
+  margin-right: auto;
+
+  &_menu {
+    min-width: 28px;
+    height: 28px;
+
+    // Center itself
+    margin: auto;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(141, 138, 138, 0.2);
+      border-radius: 2px;
+    }
+  }
+}
+
+.right_control {
+  height: 100%;
+  display: flex;
+
+  &_logo {
+    // Center itself
+    margin: auto;
+    height: 28px;
+  }
+}
+
+.right_control_logo,
+.left_control_menu {
+  // Center its child elements
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   color: var(--dark);
   background-color: var(--white);
@@ -13,11 +76,11 @@
 }
 
 .icon-sentiment_satisfied:before {
-  content: "\e901";
+  content: '\e901';
 }
 
 .icon-sentiment_satisfied:hover:before {
-  content: "\e902";
+  content: '\e902';
 }
 
 // Navbar Destop
@@ -55,7 +118,7 @@
   }
 
   &__link::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 2rem;
     bottom: 1rem;
@@ -189,7 +252,7 @@
   background-color: var(--dark);
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0.5rem;
     width: 100%;
@@ -198,7 +261,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -0.5rem;
     width: 100%;

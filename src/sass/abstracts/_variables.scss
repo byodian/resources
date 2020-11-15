@@ -3,13 +3,13 @@
   --white: #fefdff;
   --blue: #4343a7;
   --blue-light: #e9f0fa;
-  --red: #d22f32;
+  --red: #79494a;
   --orange: #fdc942;
   --gray: #3f3f40;
   --light-gray: #faf9fe;
   --pink: #f1b0b1;
   --green: #83ac0e;
-  --dark: #263238;
+  --dark: #333;
 
   --gradient: linear-gradient(
     to right,
@@ -20,4 +20,11 @@
     #cf556c 78%,
     #b12a5b 100%
   );
+
+  // The padding of content
+  --gap: 4rem;
+
+  // box-shadow
+  --general-shadow: 0 1px 1px rgba(175, 175, 175, 0.3);
+  --dark-shadow: 0 1px 1px rgba(184, 174, 174, 0.5);
 }

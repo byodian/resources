@@ -1,0 +1,17 @@
+#content_wrapper {
+  margin-top: 46px;
+  font-size: 1.4rem;
+}
+
+.content_wrapper {
+  &.hidden {
+    #left_menu {
+      left: -300px;
+      background-color: transparent;
+    }
+
+    #content {
+      margin-left: 0;
+    }
+  }
+}

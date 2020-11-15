@@ -1,0 +1,42 @@
+#left_menu {
+  position: fixed;
+  left: 0;
+  width: 28rem;
+  padding-top: 3rem;
+  padding-left: 4.2rem;
+  min-height: 100vh;
+  background-color: #fff;
+  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.left_menu {
+  padding-top: 2rem;
+
+  &_item {
+    display: flex;
+    align-items: center;
+    margin-left: -0.5rem;
+    margin-right: 3.5rem;
+    padding: 0.8rem 1rem;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #f3f3f3;
+      border-radius: 0.2rem;
+    }
+  }
+}
+
+.menu_item {
+  &_icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 0.2rem;
+    margin-right: 1rem;
+    background: #ff842c;
+  }
+
+  &_content {
+    font-size: 1.4rem;
+  }
+}

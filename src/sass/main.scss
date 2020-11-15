@@ -1,16 +1,14 @@
 @import './base/reset';
-@import './base/base';
 @import './abstracts/variables';
 @import './utilities';
 @import './abstracts/extend';
 @import './abstracts/mixins';
 
-@import './layout/grid';
+@import './layout/row';
 @import './layout/header';
-@import './components/hero';
-@import './components/newsletter';
-@import './layout/group';
-@import './components/detail';
-@import './components/favorite';
-@import './components/resources';
+@import './layout/mainContent';
+@import './layout/leftMenu';
+@import './layout/content';
+@import './components/banner';
+@import './components/group';
 @import './components/card';

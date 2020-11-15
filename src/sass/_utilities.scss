@@ -1,19 +1,19 @@
 @font-face {
-  font-family: "icomoon";
-  src: url("../fonts/icomoon.eot?sbvjdl");
-  src: url("../fonts/icomoon.eot?sbvjdl#iefix") format("embedded-opentype"),
-    url("../fonts/icomoon.ttf?sbvjdl") format("truetype"),
-    url("../fonts/icomoon.woff?sbvjdl") format("woff"),
-    url("../fonts/icomoon.svg?sbvjdl#icomoon") format("svg");
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?sbvjdl');
+  src: url('../fonts/icomoon.eot?sbvjdl#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?sbvjdl') format('truetype'),
+    url('../fonts/icomoon.woff?sbvjdl') format('woff'),
+    url('../fonts/icomoon.svg?sbvjdl#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: 'icomoon' !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -26,8 +26,11 @@
 }
 
 .container {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  max-width: 1080px;
+  padding-top: 2rem;
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+  margin: 0 auto;
 
   @media screen and (max-width: 900px) {
     padding-left: 2.5rem;
@@ -57,26 +60,6 @@
   text-align: center !important;
 }
 
-.u-title {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 0;
-  padding-top: 0.5rem;
-  padding-bottom: 3rem;
-  font-size: 1.5rem;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 50%;
-    height: 2px;
-    background-image: var(--gradient);
-  }
-}
-
 // Button
 .btn {
   background-color: transparent;
@@ -89,7 +72,7 @@
 
 // Position
 
-[class*="u-position-center"] {
+[class*='u-position-center'] {
   position: absolute !important;
 }
 
