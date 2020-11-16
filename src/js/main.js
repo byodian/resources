@@ -1,82 +1,48 @@
-const mainContent = document.querySelector('#content_wrapper');
-const leftControl = document.querySelector('.left_control');
+import renderCard from "./components/Card";
+import generateItem from "./components/MenuItems";
 
-leftControl.addEventListener('click', toggleSideBar);
+const resources = [
+  {
+    title: 'HTML Reference',
+    content: '首页',
+    src: './svg/example.svg',
+    linkHref: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element'
+  },
+  {
+    title: 'HTML Attribute Reference',
+    content: 'HTML',
+    src: './svg/example.svg',
+    linkHref: 'https://www.w3schools.com/tags/ref_attributes.asp'
+  },
+  {
+    title: 'glyphs(符号)',
+    content: 'Javascript',
+    src: './svg/example.svg',
+    linkHref: 'https://css-tricks.com/snippets/html/glyphs/'
+  }
+]
+
+const elements = {
+  mainContent: document.querySelector('#content_wrapper'),
+  leftControl: document.querySelector('.left_control'),
+  leftMenuItems: document.querySelector('.left_menu_items'),
+  groupItems: document.querySelector('.group_items')
+}
+
+const fragmentElements = {
+  menuItemsFragment: document.createDocumentFragment(),
+  cardsFragment: document.createDocumentFragment()
+}
+
+resources.forEach(resource => {
+  fragmentElements.menuItemsFragment.append(generateItem(resource));
+  fragmentElements.cardsFragment.append(renderCard(resource));
+});
+
+elements.leftControl.addEventListener('click', toggleSideBar);
+elements.leftMenuItems.appendChild(fragmentElements.menuItemsFragment);
+elements.groupItems.appendChild(fragmentElements.cardsFragment);
 
 function toggleSideBar(e) {
-  mainContent.classList.toggle('hidden');
+  elements.mainContent.classList.toggle('hidden');
 }
-
-function Ninja() {
-  let skillLevel = null;
-
-  this.getSkillLevel = () => {
-    console.log("Get skill level value");
-    return skillLevel
-  };
-
-  this.setSkillLevel = value => {
-    console.log("Modifying skillLevel property from:", skillLevel, "to:", value);
-    skillLevel = value;
-    return skillLevel;
-  }
-} 
-
-function Ninja1() {
-  let _skillLevel = 0;
-
-  Object.defineProperty(this, 'skillLevel', {
-    get: () => {
-      console.log('Getting skillLevel');
-      return _skillLevel;
-    },
-    set: (value) => {
-      if (!Number(value)) {
-        console.log('Value is not a integer Number');
-        throw new TypeError("skillLevel should be a number")
-      } else if (_skillLevel !== value) {
-        console.log('The skillLevel is changed');
-        console.log('skill level value is changed from:', _skillLevel, 'to:', value);
-      } 
-      _skillLevel = value;
-    }
-  })
-}
-
-const ninja = new Ninja1();
-console.log(ninja._skillLevel);
-console.log(ninja.skillLevel);
-ninja.skillLevel = 2.7;
-console.log(ninja.skillLevel);
-
-const shogum = {
-  name: 'Yoshiaki',
-  clan: 'Ashiaga',
-  get fullTitle() {
-    return this.name + ' ' + this.clan;
-  },
-  set fullTitle(value) {
-    const segments = value.split(' ');
-    this.name = segments[0];
-    this.clan = segments[1];
-  }
-}
-
-console.log(shogum.fullTitle)
-shogum.fullTitle = 'Btodian jimmy';
-console.log(shogum.fullTitle)
-
-const emeror = { name: 'Lomei'};
-const representative = new Proxy(emeror, {
-  get: (target, key) => {
-    console.log('Reading ' + key + " through a proxy");
-    return key in target ? target[key] : 'Don\'t bother the emeror';
-  },
-  set: (target, key, value) => {
-    console.log("Writing " + key + " through a proxy");
-    target[key] = value;
-  }
-})
-
-console.log(representative.name)
-console.log(representative.age);

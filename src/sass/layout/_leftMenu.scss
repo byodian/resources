@@ -14,7 +14,7 @@
 
   &_item {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-left: -0.5rem;
     margin-right: 3.5rem;
     padding: 0.8rem 1rem;
@@ -29,14 +29,15 @@
 
 .menu_item {
   &_icon {
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     border-radius: 0.2rem;
     margin-right: 1rem;
-    background: #ff842c;
+    // background: #ff842c;
   }
 
   &_content {
     font-size: 1.4rem;
+    margin-bottom: 0;
   }
 }
