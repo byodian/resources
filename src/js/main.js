@@ -61,8 +61,8 @@ resources.forEach(resource => {
 
 els.leftControl.addEventListener('click', toggleSideBar);
 els.leftMenuItems.appendChild(fragmentElements.menuItemsFragment);
-els.groupItems.appendChild(fragmentElements.cardsFragment);
 els.sectionsContainer.innerHTML = renderSection();
+els.groupItems.appendChild(fragmentElements.cardsFragment);
 
 
 function renderSection() {
