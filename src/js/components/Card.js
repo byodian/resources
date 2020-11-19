@@ -1,3 +1,5 @@
+import * as helper from "./Helper";
+
 const renderCard = function ({ src, title, content, linkHref}) {
   const li = document.createElement('li');
   li.className = 'group_item col3';
@@ -20,7 +22,7 @@ const renderCard = function ({ src, title, content, linkHref}) {
 
   const cardTitle = document.createElement('h4');
   cardTitle.className = 'card_title';
-  cardTitle.appendChild(document.createTextNode(title));
+  cardTitle.textContent = title;
 
   const cardText = document.createElement('p');
   cardText.className = 'card_text';
