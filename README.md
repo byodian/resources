@@ -1,2 +1,2 @@
 # web-resources)
-[Demo](https://webresource.netlify.com)
+[Demo](https://resource.netlify.com)
