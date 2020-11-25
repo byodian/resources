@@ -84,7 +84,7 @@ const buildScripts = function(cb) {
     .pipe(mode.production(terser({output: {comments: false}})))
     .pipe(mode.production(rename({
       basename: 'main',
-      suffix: '.min'
+      // suffix: '.min'
     })))
     .pipe(mode.development( sourcemaps.write() ))
     .pipe(dest(paths.scripts.output))
@@ -102,7 +102,7 @@ const buildStyles = function(cb) {
     }))
     .pipe(autoprefixer())
     .pipe(mode.production(csso()))
-    .pipe(mode.production(rename({suffix: '.min'})))
+    // .pipe(mode.production(rename({suffix: '.min'})))
     .pipe(mode.development(sourcemaps.write()))
 		.pipe(dest(paths.styles.output));
 }
