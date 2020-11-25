@@ -1,4 +1,4 @@
-#left_menu {
+.left_menu {
   position: fixed;
   left: 0;
   width: 28rem;
@@ -7,9 +7,6 @@
   min-height: 100vh;
   background-color: #fff;
   transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.left_menu {
   padding-top: 2rem;
 
   &_item {
