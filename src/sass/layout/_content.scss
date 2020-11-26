@@ -1,6 +1,13 @@
+#app {
+  overflow: hidden;
+}
+
 #content {
   min-height: 100vh;
-  margin-left: 280px;
+
+  // Make sure the mobile have a correct style
+  min-width: 320px;
+  margin-left: var(--nav-width);
   background-color: #f3f3f3;
   transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }

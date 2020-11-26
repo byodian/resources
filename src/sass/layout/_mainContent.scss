@@ -5,7 +5,7 @@
 
 // Control navigation and content
 .content_wrapper {
-  &.hidden {
+  &.is-closed {
     #left_menu {
       left: -300px;
       background-color: transparent;

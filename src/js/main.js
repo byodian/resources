@@ -450,7 +450,7 @@ const render = (function() {
   };
 
   const toggleNav = function() {
-    document.querySelector('#content_wrapper').classList.toggle('hidden');
+    document.querySelector('#content_wrapper').classList.toggle('is-closed');
   }
   // Insert left navigation items into document
   const renderNavItems = function (selector, categories) {
@@ -459,7 +459,7 @@ const render = (function() {
       .map((category) => {
         return `
           <li class="left_menu_item">
-            <img class="menu_item_icon" src="/svg/example.svg"></img>
+            <img class="menu_item_icon" src="./svg/example.svg"></img>
             <p class="menu_item_content">${category}</p>
           </li>
         `;

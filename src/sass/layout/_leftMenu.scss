@@ -1,7 +1,7 @@
 .left_menu {
   position: fixed;
   left: 0;
-  width: 28rem;
+  width: var(--nav-width);
   padding-top: 3rem;
   padding-left: 4.2rem;
   min-height: 100vh;

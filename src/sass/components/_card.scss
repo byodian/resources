@@ -18,6 +18,10 @@
   &_title {
     font-size: 1.4rem;
     font-weight: 700;
+
+    @media screen and (max-width: 320px) {
+      font-size: 1.6rem;
+    }
   }
 
   &_text {
@@ -26,6 +30,10 @@
     font-size: 0.9rem;
     line-height: 1.2;
     color: #999;
+
+    @media screen and (max-width: 320px) {
+      font-size: 1.2rem;
+    }
   }
 
   &_title,
