@@ -3,6 +3,10 @@
   align-items: center;
   min-height: 64px;
 
+  @media screen and (max-width: 320px) {
+    height: 85px;
+  }
+
   &_body {
     width: 100%;
     overflow: hidden;
