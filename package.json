@@ -10,7 +10,8 @@
     "server": "json-server --port 3001 --watch db.json",
     "server:start": "node ./backend/index.js",
     "server:dev": "nodemon ./backend/index.js",
-    "deploy:full": "npm run build && npm run build:ui && git add . && git commit -m uibuild && git push"
+    "deploy:full": "npm run build && npm run build:ui && git add . && git commit -m uibuild && git push",
+    "deploy": "npm run build && npm run build:ui"
   },
   "keywords": [],
   "author": "",
