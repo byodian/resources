@@ -1,9 +1,12 @@
 const express = require('express');
 const cors = require('cors');
+const serverless = require('serverless-http');
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static('dist'));
+
 let resources = [
   {
     title: 'HTML Reference',
@@ -499,11 +502,11 @@ app.get('/', (req, res) => {
   res.send('<h1>Hello world!</h1>');
 })
 
-app.get('/api/resources', (req, res) => {
+app.get('/.netlify/functions/api/resources', (req, res) => {
   res.json(resources);
 })
 
-app.get('/api/resources/:id', (req, res) => {
+app.get('/.netlify/functions/api/resources/:id', (req, res) => {
   const id = Number(req.params.id);
   const resource = resources.find(resource => resource.id === id);
 
@@ -549,3 +552,5 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 })
+
+module.exports.handler = serverless(app);

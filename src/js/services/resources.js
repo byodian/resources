@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = '/api/resources';
+const baseUrl = '/.netlify/functions/api/resources';
 
 const getAll = function() {
   const request = axios.get(baseUrl);

@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:ui": "npm run build && rm -rf ./backend/dist && cp -r ./dist ./backend",
+    "build:ui": "npm run build && rm -rf ./express/dist && cp -r ./dist ./express",
     "dev": "gulp dev --development",
     "build": "gulp --production",
     "server": "json-server --port 3001 --watch db.json",
-    "server:start": "node ./backend/index.js",
-    "server:dev": "nodemon ./backend/index.js",
-    "deploy:full": "npm run build && npm run build:ui && git add . && git commit -m uibuild && git push",
-    "deploy": "npm run build && npm run build:ui"
+    "server:start": "node ./express/api.js",
+    "server:dev": "nodemon ./express/api.js",
+    "build:netlify": "netlify-lambda build express"
   },
   "keywords": [],
   "author": "",
@@ -43,6 +42,8 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "netlify-lambda": "^2.0.1",
+    "serverless-http": "^2.6.0"
   }
 }
