@@ -4,11 +4,14 @@ const cors = require('cors');
 const serverless = require('serverless-http');
 const app = express();
 const Resource = require('./models/resources');
-const { response } = require('express');
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static('dist'));
+
+app.get('/', (req, res) => {
+  res.send('Hello world');
+})
 
 // When the response is sent in the JSON format,
 // the toJSON method of each object in the array
@@ -35,7 +38,7 @@ app.get('/.netlify/functions/api/resources/:id', (req, res) => {
     })
 })
 
-app.post('/resources', (req, res) => {
+app.post('/.netlify/functions/api/resourcess', (req, res) => {
   const body = req.body;
 
   if (!body.title || !body.content) {
