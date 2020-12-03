@@ -33,7 +33,7 @@ const render = (function() {
   // Generate a list of the section 
   const generateListOfSection = resource => `
     <li class="group_item col3">
-      <a class="group_item_link" href="${resource.linkHref}">
+      <a class="group_item_link" href="${resource.href}">
         <div class="card">
           <img class="card_icon" src="${resource.src}">
           <div class="card_body">

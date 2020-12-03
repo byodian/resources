@@ -1,0 +1,7 @@
+POST http://localhost:3001/resources
+Content-Type: application/json
+
+{
+  "title": "Hello world",
+  "content": "HI"
+}

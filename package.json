@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:ui": "npm run build && rm -rf ./express/dist && cp -r ./dist ./express",
     "dev": "gulp dev --development",
     "build": "gulp --production",
-    "server": "json-server --port 3001 --watch db.json",
     "server:start": "node ./express/api.js",
     "server:dev": "nodemon ./express/api.js",
     "build:netlify": "netlify-lambda build express"
@@ -42,7 +40,10 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.1",
     "netlify-lambda": "^2.0.1",
     "serverless-http": "^2.6.0"
   }
