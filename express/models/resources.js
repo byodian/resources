@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');、
+const mongoose = require('mongoose');
 const mongodb = require('mongodb');
 
 // Connect MongoDB 
