@@ -1,7 +1,6 @@
 @import './base/reset';
 @import './abstracts/variables';
 @import './utilities';
-@import './abstracts/extend';
 @import './abstracts/mixins';
 
 @import './layout/row';
@@ -12,3 +11,4 @@
 @import './components/banner';
 @import './components/group';
 @import './components/card';
+@import './components/skeleton';

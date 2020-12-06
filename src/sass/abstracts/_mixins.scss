@@ -2,3 +2,7 @@
   width: $width;
   height: $height;
 }
+
+@mixin border-radius {
+  border-radius: 0.2rem;
+}

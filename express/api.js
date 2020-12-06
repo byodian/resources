@@ -19,7 +19,9 @@ app.get('/', (req, res) => {
 app.get('/.netlify/functions/api/resources', (req, res) => {
   Resource.find({})
     .then(resources => {
-      res.json(resources);
+      let obj = {};
+      obj.resources = resources
+      res.json(obj);
     })
 })
 
@@ -38,7 +40,7 @@ app.get('/.netlify/functions/api/resources/:id', (req, res) => {
     })
 })
 
-app.post('/.netlify/functions/api/resourcess', (req, res) => {
+app.post('/.netlify/functions/api/resources', (req, res) => {
   const body = req.body;
 
   if (!body.title || !body.content) {
@@ -62,7 +64,7 @@ app.post('/.netlify/functions/api/resourcess', (req, res) => {
     })
 })
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 })
