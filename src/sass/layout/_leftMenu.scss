@@ -8,6 +8,11 @@
   background-color: #fff;
   transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   padding-top: 2rem;
+  z-index: 198;
+
+  @media screen and (max-width: 750px) {
+    width: calc(100% - 5rem);
+  }
 
   &_item {
     display: flex;

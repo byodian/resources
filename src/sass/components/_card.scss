@@ -4,8 +4,12 @@
   min-height: 64px;
   overflow: hidden;
 
+  @media screen and (max-width: 420px) {
+    height: 74px;
+  }
+
   @media screen and (max-width: 320px) {
-    height: 85px;
+    height: 84px;
   }
 
   &_body {

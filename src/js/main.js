@@ -1,6 +1,8 @@
 import resourcesService from './services/resources';
 import { getSections, getCards, getMenuItems, render } from './views/ui';
 import renderSkeletonScreen from './views/skeleton';
+import toggleEnterActive from './views/toggleMenu';
+import { closeMenu } from './views/toggleMenu';
 
 const app = (function() {
   // Variables
@@ -75,7 +77,10 @@ const app = (function() {
   .getAll()
   .then(resources => {
       init(resources);
+      toggleEnterActive();
+      closeMenu();
   });
+
 
 // Inits & Events
   that.init = init;
