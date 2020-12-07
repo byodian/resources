@@ -3,6 +3,6 @@
   height: $height;
 }
 
-@mixin border-radius {
-  border-radius: 0.2rem;
+@mixin border-radius($radius) {
+  border-radius: $radius;
 }

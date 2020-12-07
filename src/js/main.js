@@ -1,8 +1,7 @@
 import resourcesService from './services/resources';
 import { getSections, getCards, getMenuItems, render } from './views/ui';
 import renderSkeletonScreen from './views/skeleton';
-import toggleEnterActive from './views/toggleMenu';
-import { closeMenu } from './views/toggleMenu';
+import { changeOverlayStatus, closeMenu } from './views/toggleMenu';
 
 const app = (function() {
   // Variables
@@ -20,10 +19,6 @@ const app = (function() {
   const uniqueArray = function (arr) {
     return arr.filter((value, index, self) => self.indexOf(value) === index);
   };
-
-  const toggleNav = function() {
-    document.querySelector('#content_wrapper').classList.toggle('is-closed');
-  }
 
   const appendMakeup = function(selector, makeup) {
     if (!document.querySelector(selector)) return;
@@ -63,9 +58,10 @@ const app = (function() {
     categories.forEach(category => {          
       renderCards(category, settings.resources)
     })
-    
-    // Event
-    document.querySelector('.top_bar_btn').addEventListener('click', toggleNav, false);
+
+    // Event 
+      changeOverlayStatus();
+      closeMenu();
   };
 
 
@@ -76,9 +72,7 @@ const app = (function() {
   resourcesService
   .getAll()
   .then(resources => {
-      init(resources);
-      toggleEnterActive();
-      closeMenu();
+    init(resources);
   });
 
 

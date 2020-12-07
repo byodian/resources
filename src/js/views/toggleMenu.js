@@ -1,34 +1,36 @@
-const changeEnterDone = function () {
-  // Check the left_menu_overlay-enter-active
-  if (document.querySelector('.left_menu_overlay-enter-active')) {
-    console.log(1)
-    document.querySelector('.left_menu_overlay').classList.remove('left_menu_overlay-exit-done');
-    document.querySelector('.left_menu_overlay').classList.add('left_menu_overlay-enter-done');
-  } else {
-    document.querySelector('.left_menu_overlay').classList.add('left_menu_overlay-exit-done');
-    document.querySelector('.left_menu_overlay').classList.remove('left_menu_overlay-enter-done');
-  }
+const selector = {
+  leftControlMenu: document.querySelector('.left_control_menu'),
+  leftMenuOverlay: document.querySelector('.left_menu_overlay'),
+  contentWrapper: document.querySelector('.content_wrapper')
 }
 
-const toggleEnterActive = function (className) {
+const classNames = {
+  enterDone: 'left_menu_overlay left_menu_overlay-enter-done',
+  exitDone: 'left_menu_overlay left_menu_overlay-exit-done'
+}
+
+// Represent the left menu opening or closing
+// True means it's opening
+let isActive = true;
+
+const handleOverlay = function (classNames) {
   return function () {
-    document.querySelector('.left_menu_overlay').classList.toggle(className);
-    changeEnterDone();
+    if (isActive) {
+      selector.contentWrapper.classList.remove('is-closed');
+      selector.leftMenuOverlay.className = classNames.enterDone;
+    } else {
+      selector.leftMenuOverlay.className = classNames.exitDone;
+      selector.contentWrapper.classList.add('is-closed');
+    }
+
+    isActive = !isActive;
   }
 }
 
-const toggleExitDone = function () {
-    document.querySelector('.left_menu_overlay').classList.remove('left_menu_overlay-enter-done');
-    document.querySelector('.left_menu_overlay').classList.add('left_menu_overlay-exit-done');
-    document.querySelector('.left_menu_overlay').classList.remove('left_menu_overlay-enter-active');
-    document.querySelector('.content_wrapper').classList.add('is-closed');
-}
-
-export default function () {
-  const className = 'left_menu_overlay-enter-active';
-  document.querySelector('.left_control_menu').addEventListener('click', toggleEnterActive(className));
+export function changeOverlayStatus () {
+  selector.leftControlMenu.addEventListener('click', handleOverlay(classNames));
 }
 
 export function closeMenu() {
-  document.querySelector('.left_menu_overlay').addEventListener('click', toggleExitDone)
+  selector.leftMenuOverlay.addEventListener('click', handleOverlay(classNames));
 }
