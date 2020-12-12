@@ -1,9 +1,9 @@
-import { elements, classes } from './views/elements'
-import resourcesService from './services/resources';
-import { getSections, getCards, getMenuItems, render, template } from './views/ui';
-import renderSkeletonScreen from './views/skeleton';
-import handleOverlay from './views/toggleMenu';
+import { Component } from './models/Component';
+import { elements, classes, getSections, getCards, getMenuItems } from './views/ui';
 import { resize } from './views/resize';
+import { getSkeleton, render } from './views/skeleton';
+import service from './services/resources';
+import handleOverlay from './views/toggleMenu';
 
 const app = (function() {
   // Variables
@@ -28,7 +28,12 @@ const app = (function() {
       resource => resource.category.trim() === category
     );
 
-    render(selector, template(uniqueResources, getCards));
+    const cards = new Component(selector, {
+      resources: resources,
+      callback: getCards
+    });
+
+    cards.render();
   }
 
   // Init events
@@ -42,10 +47,18 @@ const app = (function() {
     );
 
     // Get all items of left menu items then append it to document
-    render(settings.navItemContainer, template(categories, getMenuItems));
+    const menuItems = new Component(settings.navItemContainer, {
+      resources: categories,
+      callback: getMenuItems
+    });
+    menuItems.render();
 
     // Get all sections of main content
-    render(settings.sectionsContainer, template(categories, getSections));
+    const sections = new Component(settings.sectionsContainer, {
+      resources: categories,
+      callback: getSections
+    })
+    sections.render();
 
     // Render sections items on document
     categories.forEach(category => {          
@@ -53,25 +66,24 @@ const app = (function() {
     })
 
     // Event 
-  elements.leftControlMenu.addEventListener('click', handleOverlay(elements, classes));
-  elements.leftMenuOverlay.addEventListener('click', handleOverlay(elements, classes));
-  resize.init();
+    elements.leftControlMenu.addEventListener('click', handleOverlay(elements, classes));
+    elements.leftMenuOverlay.addEventListener('click', handleOverlay(elements, classes));
+    resize.init();
   };
-
-
-  // Render the skeleton screen before getting the resources from server
-  render(defaults.sectionsContainer, renderSkeletonScreen());
-
-    // Get resources from the service side
-  resourcesService
-    .getAll()
-    .then(resources => {
-      init(resources);
-    });
 
 
 // Inits & Events
   that.init = init;
+
+  // Render the skeleton screen before getting the resources from server
+  render(defaults.sectionsContainer, getSkeleton());
+
+    // Get resources from the service side
+  service
+    .getAll()
+    .then(resources => {
+      init(resources);
+    });
 
   return that;
 })();

@@ -1,4 +1,4 @@
-export default function getSkeletonScreen() {
+export function getSkeleton() {
   let items = '';
 
   const item = `
@@ -31,3 +31,8 @@ export default function getSkeletonScreen() {
   `;
 }
 
+export function render(selector, template) {
+  const target = document.querySelector(selector);
+  if (!target) return;
+  target.innerHTML = template;
+}
