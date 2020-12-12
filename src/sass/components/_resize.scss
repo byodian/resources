@@ -1,0 +1,13 @@
+.resize_handle {
+  position: fixed;
+  width: 0.5rem;
+  height: 100vh;
+  background: transparent;
+  z-index: 199;
+  cursor: col-resize;
+  overflow: hidden;
+}
+
+.resize_handle:hover {
+  background: #edece2;
+}

@@ -31,10 +31,15 @@ export const getCards = resource => `
     </li>
   `;
 
-export const render = function(array, func) {
-    const makeup = array
-      .map(item => func(item))
-      .join('')
-    return makeup;
-  }
+export function template(array, func) {
+  return array
+    .map(item => func(item))
+    .join('')
+}
+
+export function render(selector, template) {
+  const target = document.querySelector(selector);
+  if (!target) return;
+  target.innerHTML = template;
+}
 

@@ -1,0 +1,28 @@
+// When the left menu is showed or hided,
+// how the left menu and main content is displayed
+
+.left_menu_hidden .resize_handle {
+  display: none;
+}
+
+// Control navigation and content
+@media screen and (min-width: 750px) {
+  html.left_menu_hidden {
+    & #content {
+      margin-left: 0 !important;
+    }
+
+    & #left_menu {
+      left: -42.5rem;
+      // background-color: transparent;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  html.left_menu_show {
+    & #left_menu {
+      left: 0;
+    }
+  }
+}

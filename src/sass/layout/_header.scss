@@ -10,6 +10,11 @@
   background-color: #fff;
   z-index: 200;
 
+  @media screen and (max-width: 850px) {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   &_inner {
     display: flex;
     align-items: center;

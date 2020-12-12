@@ -1,15 +1,16 @@
 @import './base/reset';
 @import './abstracts/variables';
-@import './utilities';
 @import './abstracts/mixins';
+@import './tools/utilities';
+@import './tools/helper';
 
 @import './layout/row';
 @import './layout/header';
-@import './layout/mainContent';
 @import './layout/leftMenu';
 @import './layout/content';
 @import './components/banner';
 @import './components/group';
 @import './components/card';
 @import './components/skeleton';
-@import './layout/overlay';
+@import './components/overlay';
+@import './components/resize';

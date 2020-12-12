@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="left_menu_show">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,16 +27,12 @@
     </header>
 
     <main id="app_holder" style="scroll-behavior: smooth;">
-      <div id="content_wrapper" class="content_wrapper is-closed">
-        <div id="left_menu" class="left_menu">
-          <ul class="left_menu_items">
-            <li class="left_menu_item">
-              <img class="menu_item_icon" src="/svg/example.svg"></img>
-              <p class="menu_item_content">首页</p>
-            </li>
-          </ul>
-        </div>
+      <div id="content_wrapper" class="content_wrapper">
         <div class="left_menu_overlay left_menu_overlay-exit-done"></div>
+        <div id="left_menu" class="left_menu">
+          <ul class="left_menu_items"></ul>
+        </div>
+        <div class="resize_handle" id="resize_menu_resize"></div>
         <div id="content" class="main_content">
           <div class="container">
             <div id="banner">

@@ -13,6 +13,11 @@
 
   // 移动端不需要显示左外边距
   @media screen and (max-width: 750px) {
-    margin-left: 0;
+    margin-left: 0 !important;
+  }
+
+  &_wrapper {
+    margin-top: 46px;
+    font-size: 1.4rem;
   }
 }

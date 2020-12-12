@@ -131,3 +131,24 @@ object {
   max-width: 100%;
   height: auto;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: #edece9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d3d1cb;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aeaca6;
+}

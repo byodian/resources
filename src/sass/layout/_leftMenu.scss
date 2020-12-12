@@ -4,21 +4,30 @@
   width: var(--nav-width);
   padding-top: 3rem;
   padding-left: 4.2rem;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #fff;
   transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   padding-top: 2rem;
   z-index: 198;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  &:hover {
+    overflow-y: auto;
+  }
 
   @media screen and (max-width: 750px) {
-    width: calc(100% - 5rem);
+    left: -42.5rem;
+  }
+
+  &_items {
+    width: 98%;
   }
 
   &_item {
     display: flex;
     align-items: center;
     margin-left: -0.5rem;
-    margin-right: 3.5rem;
     padding: 0.8rem 1rem;
     transition: background-color 0.2s ease-in-out;
 
