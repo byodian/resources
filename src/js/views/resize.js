@@ -1,9 +1,3 @@
-Function.prototype.method = function(name, func) {
-  if (this.prototype[name]) return;
-  this.prototype[name] = func;
-  return this;
-}
-
 export const resize = (function() {
 
   const that = {}; 
@@ -19,7 +13,7 @@ export const resize = (function() {
     },
     sizes: {
       maxpageX: 425,
-      minpageX: 250,
+      minpageX: 150,
       x: 250
     },
     callback: function(content) {
@@ -34,9 +28,10 @@ export const resize = (function() {
 
     // methods
     const moveAt = function(x) {
-      defaults.elements.leftMenu.style.width = x + 'px';
-      defaults.elements.resizeHandle.style.left = x + 'px';
-      defaults.elements.mainContent.style.marginLeft = x + 'px';
+      if (x > 425 || x < 150) return;
+      settings.elements.leftMenu.style.width = x + 'px';
+      settings.elements.resizeHandle.style.left = x + 'px';
+      settings.elements.mainContent.style.marginLeft = x + 'px';
     }
 
     const onMouseUp = function() {
