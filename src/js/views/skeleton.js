@@ -1,38 +1,38 @@
-export function getSkeleton() {
+const makeItems = () => {
   let items = '';
 
-  const item = `
-    <li class="group_item col3">
-      <a class="group_item_link">
-        <div class="card">
-          <div class="card_icon loading"></div>
-          <div class="card_body">
-            <h4 class="card_title loading"></h4>
-            <p class="card_text loading"></p>
+  for (let i = 0; i < 20; i++) {
+    items += `
+      <li class="group_item col3">
+        <a class="group_item_link">
+          <div class="card">
+            <div class="card_icon loading"></div>
+            <div class="card_body">
+              <h4 class="card_title loading"></h4>
+              <p class="card_text loading"></p>
+            </div>
           </div>
-        </div>
-      </a>
-    </li>
-  `;
-
-  for(let i = 0; i < 20; i++) {
-    items += item;
+        </a>
+      </li>
+    `;
   }
 
-  return `
-    <section class="group" >
-      <h3 class="group_title loading"></h3>
-      <div class="group_content">
-        <ul class="row group_items">
-          ${items}
-        </ul>
-      </div>
-    </section>
-  `;
+  return items;
 }
+
+export const getSkeleton = () => `
+  <section class="group" >
+    <h3 class="group_title loading"></h3>
+    <div class="group_content">
+      <ul class="row group_items">
+        ${makeItems()}
+      </ul>
+    </div>
+  </section>
+`;
 
 export function render(selector, template) {
   const target = document.querySelector(selector);
   if (!target) return;
-  target.innerHTML = template;
+  target.innerHTML = template();
 }
