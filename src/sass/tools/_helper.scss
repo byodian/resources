@@ -13,7 +13,7 @@
     }
 
     & #left_menu {
-      left: -42.5rem;
+      left: -75.5rem;
       // background-color: transparent;
     }
   }
@@ -25,4 +25,25 @@
       left: 0;
     }
   }
+}
+
+// When activing resize handler these will remove left_menu
+// and main_content transition properties
+.transition_none {
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+
+// 在执行鼠标拖动组件，禁止用户选择功能
+body.no_user_selection {
+  user-select: none;
+}
+
+// resize_beyond
+body.resize_beyond_max {
+  cursor: w-resize;
+}
+
+body.resize_beyond_min {
+  cursor: e-resize;
 }

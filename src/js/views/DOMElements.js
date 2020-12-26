@@ -2,9 +2,10 @@ export const elements = {
   leftControlMenu: document.querySelector('.left_control_menu'),
   leftMenuOverlay: document.querySelector('.left_menu_overlay'),
   html: document.documentElement,
+  body: document.body,
   leftMenu: document.querySelector('.left_menu'),
   resizeHandle: document.querySelector('.resize_handle'),
-  mainContent: document.querySelector('.main_content')
+  mainContent: document.querySelector('.main_content'),
 }
 
 export const classes = {
@@ -15,8 +16,10 @@ export const classes = {
   // Generate a item of the navigation
 export const getMenuItems = category => `
   <li class="left_menu_item">
-    <img class="menu_item_icon" src="./svg/example.svg"></img>
-    <span class="menu_item_content">${category}</span>
+    <a href="#${category}"> 
+      <img class="menu_item_icon" src="./svg/${category}.svg"></img>
+      <span class="menu_item_content">${category}</span>
+    </a>
   </li>
 `;
 

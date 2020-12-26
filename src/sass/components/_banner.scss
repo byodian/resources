@@ -1,21 +1,23 @@
-#banner {
-  display: flex;
-  align-items: center;
-
-  margin-bottom: 2rem;
-
+.banner {
   border-radius: 4px;
   background-color: #fff;
   box-shadow: var(--general-shadow);
 
-  @media screen and (max-width: 320px) {
-    height: 150px;
-  }
-}
-
-.banner {
   &_img {
-    width: 800px;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--content-gap);
+  }
+
+  &_img svg {
+    display: block;
+    width: 80%;
+    @media screen and (max-width: 600px) {
+      height: 150px;
+    }
+
+    @media screen and (max-width: 380px) {
+      height: 100px;
+    }
   }
 }

@@ -1,8 +1,10 @@
 import { Component } from './models/Component';
-import { elements, classes, getSections, getCards, getMenuItems } from './views/ui';
+import { elements, classes, getSections, getCards, getMenuItems } from './views/DOMElements';
 import { getSkeleton, render } from './views/skeleton';
 import service from './services/resources';
 import { handleOverlay, hideMenu } from './views/handleMenu';
+import { scrollHandler } from './views/scrollTo';
+import { resize } from './views/resize';
 
 const app = (function() {
   // Variables
@@ -25,6 +27,14 @@ const app = (function() {
     return function (resources) {
       return resources.filter(resource => resource.category.trim() === category);
     }
+  }
+
+  const scrollTo = function(elems, offset) {
+    for (let elem of elems) {
+      elem.addEventListener('click', scrollHandler(offset));
+    }
+
+    return false;
   }
 
   // Init events
@@ -69,9 +79,15 @@ const app = (function() {
     })
 
     // Event 
+    window.addEventListener('resize', hideMenu(elements, classes));
     elements.leftControlMenu.addEventListener('click', handleOverlay(elements, classes));
     elements.leftMenuOverlay.addEventListener('click', handleOverlay(elements, classes));
-    window.addEventListener('resize', hideMenu(elements, classes));
+    elements.leftMenu.addEventListener('mousedown', function(event) {
+      event.preventDefault();
+      return false;
+    })
+    scrollTo(document.querySelectorAll('.left_menu_item a'), 76);
+    resize.init();
   };
   
   // Inits & Events
