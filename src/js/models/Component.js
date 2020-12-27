@@ -6,6 +6,11 @@ Function.prototype.method = function(name, func) {
 
 export const Component = (function() {
 
+  /**
+   * 
+   * @param {String} selector The selector for the table of contents target
+   * @param {Object} options User options 
+   */
   var Constructor = function(selector, options) {
     this.selector = selector;
     this.resources = options.resources;

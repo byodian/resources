@@ -1,61 +1,48 @@
-import { elements } from "./DOMElements";
-
 export const resize = (function() {
+  let settings;
 
   const that = {}; 
   const defaults = {
-    elements:  {
-      leftMenu: document.querySelector('.left_menu'),
-      resizeHandle: document.querySelector('.resize_handle'),
-      mainContent: document.querySelector('.main_content')
-    },
-    classes: {
-    show: 'left_menu_show',
-    hidden: 'left_menu_hidden'
-    },
     sizes: {
       maxWidth: 425,
       minWidth: 200,
       x: 250
     },
-    callback: function(content) {
-      return content
-    }
   }
 
-  // event
-  const init = function(options) {
+  // Inits and Events
+  const initialize = function(options) {
     options = options || {} 
-    const settings = Object.assign({}, defaults, options);
+    settings = Object.assign({}, defaults, options);
 
     // methods
     const moveAt = function(x) {
-      settings.elements.leftMenu.style.width = x + 'px';
-      settings.elements.resizeHandle.style.left = x + 'px';
-      settings.elements.mainContent.style.marginLeft = x + 'px';
+      settings.nodeList.leftMenu.style.width = x + 'px';
+      settings.nodeList.resizeHandle.style.left = x + 'px';
+      settings.nodeList.mainContent.style.marginLeft = x + 'px';
     }
 
     const onMouseUp = function func() {
-      elements.leftMenu.classList.remove('transition_none');
-      elements.mainContent.classList.remove('transition_none');
-      elements.body.classList.remove('no_user_selection');
+      settings.nodeList.leftMenu.classList.remove('transition_none');
+      settings.nodeList.mainContent.classList.remove('transition_none');
+      settings.nodeList.body.classList.remove('no_user_selection');
       document.removeEventListener('mousemove', onMouseMove);
       this.removeEventListener('mouseup', func);
     }
 
     const onMouseMove = function(event) {
-      const leftMenuWidth = parseInt(elements.leftMenu.style.width, 10);
+      const leftMenuWidth = parseInt(settings.nodeList.leftMenu.style.width, 10);
       if (leftMenuWidth > settings.sizes.maxWidth || leftMenuWidth < settings.sizes.minWidth) {
         document.removeEventListener('mousemove', onMouseMove);
       } else if (leftMenuWidth <= settings.sizes.maxWidth && leftMenuWidth >= settings.sizes.minWidth) {
-        elements.leftMenu.classList.add('transition_none');
-        elements.mainContent.classList.add('transition_none');
-        elements.body.classList.add('no_user_selection');
+        settings.nodeList.leftMenu.classList.add('transition_none');
+        settings.nodeList.mainContent.classList.add('transition_none');
+        settings.nodeList.body.classList.add('no_user_selection');
         moveAt(event.pageX);
       }
     }
 
-    settings.elements.resizeHandle.addEventListener('mousedown', function(event) {
+    settings.nodeList.resizeHandle.addEventListener('mousedown', function(event) {
       document.addEventListener('mousemove', onMouseMove);
       this.addEventListener('mouseup', onMouseUp);
 
@@ -65,16 +52,15 @@ export const resize = (function() {
 
     })
 
-    settings.elements.resizeHandle.addEventListener('dblclick', function() {
+    settings.nodeList.resizeHandle.addEventListener('dblclick', function() {
       moveAt(settings.sizes.x);
     });
-
 
     // Initial 
     moveAt(settings.sizes.x);
   }
 
-  that.init = init;
+  that.initialize = initialize;
 
   return that;
 })();

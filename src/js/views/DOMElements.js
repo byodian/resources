@@ -1,16 +1,13 @@
-export const elements = {
+export const nodeList = {
   leftControlMenu: document.querySelector('.left_control_menu'),
   leftMenuOverlay: document.querySelector('.left_menu_overlay'),
+  sectionItems: document.querySelector('#section_groups'),
+  leftMenuItems: document.querySelector('#left_menu_items'),
   html: document.documentElement,
   body: document.body,
   leftMenu: document.querySelector('.left_menu'),
   resizeHandle: document.querySelector('.resize_handle'),
   mainContent: document.querySelector('.main_content'),
-}
-
-export const classes = {
-  enterDone: 'left_menu_overlay left_menu_overlay-enter-done',
-  exitDone: 'left_menu_overlay left_menu_overlay-exit-done'
 }
 
   // Generate a item of the navigation
