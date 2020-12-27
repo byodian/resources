@@ -14,7 +14,7 @@ export const nodeList = {
 export const getMenuItems = category => `
   <li class="left_menu_item">
     <a href="#${category}"> 
-      <img class="menu_item_icon" src="./svg/${category}.svg"></img>
+      <img class="menu_item_icon" src="./svg/${category}.svg" alt="This is a ${category} category"></img>
       <span class="menu_item_content">${category}</span>
     </a>
   </li>
@@ -23,7 +23,7 @@ export const getMenuItems = category => `
   // Generate a section of the main content
 export const getSections = category => `
   <section id="${category}" class="group" >
-    <h3 class="group_title">${category}</h3>
+    <h2 class="group_title">${category}</h2>
     <div class="group_content">
       <ul class="row group_items"></ul>
     </div>
@@ -35,9 +35,9 @@ export const getCards = resource => `
   <li class="group_item col3">
     <a class="group_item_link" href="${resource.href}">
       <div class="card">
-        <img class="card_icon" src="${resource.src}">
+        <img class="card_icon" src="${resource.src}" alt="${resource.src.replace(/\.\/img\//g, '')}">
         <div class="card_body">
-          <h4 class="card_title">${resource.title}</h4>
+          <h3 class="card_title">${resource.title}</h3>
           <p class="card_text">${resource.content}</p>
         </div>
       </div>

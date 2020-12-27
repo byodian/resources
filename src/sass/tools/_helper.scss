@@ -47,3 +47,7 @@ body.resize_beyond_max {
 body.resize_beyond_min {
   cursor: e-resize;
 }
+
+.left_menu_items li.current {
+  background-color: #f3f3f3;
+}

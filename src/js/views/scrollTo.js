@@ -1,3 +1,7 @@
+/**
+ * 
+ * @param {Number} offsetThe height of both topbar and group element
+ */
 export const scrollHandler = function(offset) {
   return function(event) {
     event.preventDefault();

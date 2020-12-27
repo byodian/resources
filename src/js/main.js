@@ -51,14 +51,6 @@ const app = (function () {
     };
   };
 
-  const scrollTo = function (elems, offset) {
-    for (let elem of elems) {
-      elem.addEventListener('click', scrollHandler(offset));
-    }
-
-    return false;
-  };
-
   /**
    * 
    * @param {String} selector The selector for the content parent element
@@ -115,7 +107,25 @@ const app = (function () {
     });
 
     // Scroll to the specified category by clicking the menu
-    scrollTo(document.querySelectorAll('.left_menu_item a'), 76);
+    const scrollTo = (function (offset) {
+      const items = document.querySelectorAll('.left_menu_item')
+      const links = document.querySelectorAll('.left_menu_item a');
+
+      for (let link of links) {
+
+        link.addEventListener('click', scrollHandler(offset));
+        link.addEventListener('click', function() {
+          [...items].forEach(item => {
+            if (item.classList.contains('current')) {
+              item.classList.remove('current');
+            }
+          });
+          
+          link.parentElement.classList.add('current');
+        })
+      }
+    })(76);
+
 
     // Show or hide the left menu by resizing the size of document.documentElement.clientWidth
     handleMenu(nodeList, settings.classes)();

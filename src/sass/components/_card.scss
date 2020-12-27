@@ -36,13 +36,9 @@
   &_text {
     letter-spacing: 1px;
     margin-bottom: 0;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     line-height: 1.2;
-    color: #999;
-
-    @media screen and (max-width: 320px) {
-      font-size: 1.2rem;
-    }
+    color: #666;
   }
 
   &_title,
