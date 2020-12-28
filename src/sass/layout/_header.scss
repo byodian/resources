@@ -38,10 +38,12 @@
     background: transparent;
     border: none;
 
-    transition: background 0.2s ease-in-out;
+    &:focus {
+      background-color: transparent;
+    }
 
     &:hover {
-      background-color: rgba(141, 138, 138, 0.2);
+      background-color: rgba(178, 178, 178, 0.2);
       border-radius: 2px;
     }
   }
@@ -64,4 +66,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+// helper.scss @23 line
+.close_icon {
+  display: none;
 }

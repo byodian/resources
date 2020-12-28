@@ -6,13 +6,14 @@
 }
 
 // Control navigation and content
+// Override the inline style rule set up by JavaScript codes
 @media screen and (min-width: 750px) {
   html.left_menu_hidden {
-    & #content {
+    #content {
       margin-left: 0 !important;
     }
 
-    & #left_menu {
+    #left_menu {
       left: -75.5rem;
       // background-color: transparent;
     }
@@ -21,8 +22,16 @@
 
 @media screen and (max-width: 750px) {
   html.left_menu_show {
-    & #left_menu {
+    #left_menu {
       left: 0;
+    }
+
+    .close_icon {
+      display: block;
+    }
+
+    .menu_icon {
+      display: none;
     }
   }
 }

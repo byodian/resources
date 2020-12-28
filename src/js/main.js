@@ -136,12 +136,6 @@ const app = (function () {
     window.addEventListener('resize', handleMenu(nodeList, settings.classes));
     nodeList.leftControlMenu.addEventListener('click', handleOverlay(nodeList, settings.classes));
     nodeList.leftMenuOverlay.addEventListener('click', handleOverlay(nodeList, settings.classes));
-
-    nodeList.leftMenu.addEventListener('click', function() {
-      if (nodeList.html.clientWidth < 750) {
-        hideMenu(nodeList, settings.classes);
-      }
-    });
     
     nodeList.leftMenu.addEventListener('mousedown', function (event) {
       event.preventDefault();
