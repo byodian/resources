@@ -1,10 +1,5 @@
 import { Component } from './models/Component';
-import {
-  nodeList,
-  getSections,
-  getCards,
-  getMenuItems,
-} from './views/DOMElements';
+import { nodeList, getSections, getCards, getMenuItems, } from './views/DOMElements';
 import { getSkeleton, render } from './views/skeleton';
 import service from './services/resources';
 import { handleOverlay, handleMenu , hideMenu} from './views/handleMenu';
@@ -133,7 +128,6 @@ const app = (function () {
     // Resize the width of left_menu and main_content
     resize.initialize({ nodeList: nodeList });
 
-    window.addEventListener('resize', handleMenu(nodeList, settings.classes));
     nodeList.leftControlMenu.addEventListener('click', handleOverlay(nodeList, settings.classes));
     nodeList.leftMenuOverlay.addEventListener('click', handleOverlay(nodeList, settings.classes));
     
@@ -142,6 +136,13 @@ const app = (function () {
       return false;
     });
   };
+
+  // Hide left menu navigation when user click a menu in mobile devices
+  nodeList.leftMenuItems.addEventListener('click', function() {
+    if (nodeList.html.clientWidth < 750) {
+      hideMenu(nodeList, settings.classes);
+    }
+  });
 
   //
   // Inits & Events
