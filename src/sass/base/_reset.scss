@@ -132,6 +132,10 @@ object {
   height: auto;
 }
 
+img {
+  vertical-align: middle;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

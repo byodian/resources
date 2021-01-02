@@ -5,6 +5,7 @@ import service from './services/resources';
 import { handleOverlay, handleMenu , hideMenu} from './views/handleMenu';
 import { scrollHandler } from './views/scrollTo';
 import { resize } from './views/resize';
+import { showSlides, autoShowSlides, plusSlides, currentSlide } from './views/slides';
 
 const app = (function () {
   //
@@ -107,7 +108,6 @@ const app = (function () {
       const links = document.querySelectorAll('.left_menu_item a');
 
       for (let link of links) {
-
         link.addEventListener('click', scrollHandler(offset));
         link.addEventListener('click', function() {
           [...items].forEach(item => {
@@ -122,11 +122,25 @@ const app = (function () {
     })(76);
 
 
+    // 
+    // init & Events
+    //
+
     // Show or hide the left menu by resizing the size of document.documentElement.clientWidth
     handleMenu(nodeList, settings.classes)();
 
     // Resize the width of left_menu and main_content
     resize.initialize({ nodeList: nodeList });
+    
+    // banner slides
+    autoShowSlides();
+    nodeList.prev.addEventListener('click', plusSlides(-1));
+    nodeList.next.addEventListener('click', plusSlides(1));
+    nodeList.dotWrapper.addEventListener('click', function(event) {
+      if (!event.target.matches('#dot')) return;
+      const number = Number(event.target.dataset.dot);
+      currentSlide(number);
+    })
 
     nodeList.leftControlMenu.addEventListener('click', handleOverlay(nodeList, settings.classes));
     nodeList.leftMenuOverlay.addEventListener('click', handleOverlay(nodeList, settings.classes));
@@ -135,14 +149,15 @@ const app = (function () {
       event.preventDefault();
       return false;
     });
-  };
 
-  // Hide left menu navigation when user click a menu in mobile devices
-  nodeList.leftMenuItems.addEventListener('click', function() {
-    if (nodeList.html.clientWidth < 750) {
-      hideMenu(nodeList, settings.classes);
-    }
-  });
+    // Hide left menu navigation when user click a menu in mobile devices
+    nodeList.leftMenuItems.addEventListener('click', function() {
+      if (nodeList.html.clientWidth < 750) {
+        hideMenu(nodeList, settings.classes);
+      }
+    });
+
+  };
 
   //
   // Inits & Events
@@ -150,6 +165,9 @@ const app = (function () {
 
   // Render the skeleton screen before getting the resources from server
   render(defaults.selectors.sectionsGroup, getSkeleton);
+
+  // banner slides Initial 
+  showSlides();
 
   // Get resources from the service side
   service.getAll().then((resources) => {

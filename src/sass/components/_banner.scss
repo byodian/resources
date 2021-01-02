@@ -3,22 +3,111 @@
   background-color: #fff;
   box-shadow: var(--general-shadow);
 
-  &_img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: var(--content-gap);
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--content-gap);
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 
-    @media screen and (max-width: 450px) {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
+  @media screen and (max-width: 450px) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
-  &_img img {
+  img {
     display: block;
     width: 80%;
+  }
+}
+
+.slideshow-container {
+  position: relative;
+  margin-bottom: var(--content-gap);
+}
+
+.slides {
+  display: none;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  color: #fff;
+}
+
+.numbertext {
+  position: absolute;
+  top: 0;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.2rem;
+}
+
+.text {
+  position: absolute;
+  bottom: 2.5rem;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  transform: translateY(-50%);
+  border-radius: 0 0.3rem 0.3rem 0;
+  transition: background-color 0.2s ease;
+  user-select: none;
+
+  &-next {
+    right: 0;
+    border-radius: 0.3rem 0 0 0.3rem;
+  }
+
+  &-prev {
+    left: 0;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.dot {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &-wrapper {
+    position: absolute;
+    bottom: 0.8rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  &.active {
+    width: 2rem;
+    border-radius: 1rem;
+    background-color: #ff842c;
+  }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
   }
 }

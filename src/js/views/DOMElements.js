@@ -8,6 +8,9 @@ export const nodeList = {
   leftMenu: document.querySelector('.left_menu'),
   resizeHandle: document.querySelector('.resize_handle'),
   mainContent: document.querySelector('.main_content'),
+  prev: document.querySelector('#prev'),
+  next: document.querySelector('#next'),
+  dotWrapper: document.querySelector('.dot-wrapper')
 }
 
   // Generate a item of the navigation
