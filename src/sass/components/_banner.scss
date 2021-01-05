@@ -1,13 +1,17 @@
 .slideshow-container {
   position: relative;
   margin-bottom: var(--content-gap);
+
+  &:hover .btn {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
 }
 
 .slides {
   display: none;
   border-radius: 0.4rem;
   overflow: hidden;
-  color: #fff;
+  color: #333;
 
   &-links {
     display: block;
@@ -40,6 +44,7 @@
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
+  background-color: #fff;
   transform: translateY(-50%);
   border-radius: 0 0.3rem 0.3rem 0;
   transition: background-color 0.2s ease;
@@ -52,10 +57,6 @@
 
   &-prev {
     left: 0;
-  }
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.8);
   }
 }
 
