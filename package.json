@@ -16,7 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "browser-sync": "^2.26.13",
     "del": "^6.0.0",
     "eslint": "^7.13.0",
