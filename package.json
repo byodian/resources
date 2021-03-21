@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp dev --development",
     "build": "gulp --production",
-    "server:start": "node ./express/api.js",
+    "start": "node ./express/api.js",
     "server:dev": "nodemon ./express/api.js",
     "build:netlify": "netlify-lambda build express"
   },
