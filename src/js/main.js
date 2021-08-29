@@ -42,7 +42,7 @@ const app = (function () {
   const uniqueResources = function (category) {
     return function (resources) {
       return resources.filter(
-        (resource) => resource.category.trim() === category
+        (resource) => resource.category && resource.category.trim() === category
       );
     };
   };

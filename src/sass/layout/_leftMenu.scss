@@ -2,10 +2,10 @@
   position: fixed;
   left: 0;
   width: var(--nav-width);
+  height: 100%;
   padding-top: 3rem;
   padding-left: 4.2rem;
-  height: 100vh;
-  background-color: #fff;
+  background-color: #f3f3f3;
   transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   padding-top: 2rem;
   z-index: 198;

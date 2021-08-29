@@ -34,16 +34,23 @@ export const getSections = category => `
 `;
 
   // Generate a list of the section 
-export const getCards = resource => `
-  <li class="group_item col3">
-    <a class="group_item_link" href="${resource.href}">
-      <div class="card">
-        <img class="card_icon" src="${resource.src}" alt="${resource.src.replace(/\.\/img\//g, '')}">
-        <div class="card_body">
-          <h3 class="card_title">${resource.title}</h3>
-          <p class="card_text">${resource.content}</p>
-        </div>
-      </div>
-    </a>
-  </li>
-`;
+export const getCards = resource => {
+  let  logoEl = ``;
+  resource.src 
+    ? logoEl = `<img class="card_icon" src="${resource.src}" alt="${resource.src.replace(/\.\/img\//g, '')}">`
+    : logoEl = `<span class="card_icon card_icon--noLogo"></span>`
+  
+    return `
+      <li class="group_item col3">
+        <a class="group_item_link" href="${resource.href}">
+          <div class="card">
+            ${logoEl}
+            <div class="card_body">
+              <h3 class="card_title">${resource.title}</h3>
+              <p class="card_text">${resource.content}</p>
+            </div>
+          </div>
+        </a>
+      </li>
+    `
+};

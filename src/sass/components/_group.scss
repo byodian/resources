@@ -32,12 +32,10 @@
     padding-right: 1.5rem;
     border-radius: 4px;
     background-color: #fff;
-    box-shadow: var(--general-shadow);
     transition: 0.2s ease;
 
     &:hover {
-      transform: translateY(-0.2rem);
-      box-shadow: var(--dark-shadow);
+      color: #ff842c;
     }
   }
 }
