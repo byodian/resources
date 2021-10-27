@@ -17,7 +17,7 @@ export const nodeList = {
 export const getMenuItems = category => `
   <li class="left_menu_item">
     <a href="#${category}"> 
-      <img class="menu_item_icon" src="./svg/${category}.svg" alt="This is a ${category} category"></img>
+      <img class="menu_item_icon" src="./svg/${category}.svg"></img>
       <span class="menu_item_content">${category}</span>
     </a>
   </li>
@@ -37,7 +37,7 @@ export const getSections = category => `
 export const getCards = resource => {
   let  logoEl = ``;
   resource.src 
-    ? logoEl = `<img class="card_icon" src="${resource.src}" alt="${resource.src.replace(/\.\/img\//g, '')}">`
+    ? logoEl = `<img class="card_icon" src="${resource.src}">`
     : logoEl = `<span class="card_icon card_icon--noLogo"></span>`
   
     return `

@@ -5,3 +5,6 @@ Content-Type: application/json
   "title": "Hello world",
   "content": "HI"
 }
+### 
+DELETE http://localhost:3002/.netlify/functions/api/resources/blog
+Content-Type: application/json

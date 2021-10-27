@@ -64,6 +64,19 @@ app.post('/.netlify/functions/api/resources', (req, res) => {
     })
 })
 
+// app.delete('/.netlify/functions/api/resources/:category', (req, res) => {
+//   console.log(req.params.category)
+//   Resource.deleteMany({category: req.params.category})
+//   .then(resource => {
+//     if (resource) {
+//       console.log(resource)
+//       res.status(204).end()
+//     } else {
+//       res.status(404).end();
+//     }
+//   })
+// })
+
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
