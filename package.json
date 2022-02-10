@@ -32,7 +32,7 @@
     "gulp-svgmin": "^3.0.0",
     "gulp-terser": "^1.4.1",
     "json-server": "^0.16.3",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.6",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
