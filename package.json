@@ -31,7 +31,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svgmin": "^3.0.0",
     "gulp-terser": "^1.4.1",
-    "json-server": "^0.16.3",
+    "json-server": "^0.17.1",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.6",
     "vinyl-buffer": "^1.0.1",
